@@ -47,7 +47,7 @@ regionalCertificateStack.addDependency(coreStack);
 const apiDomainStack = new <%= applicationName %>ApiDomainStack(app, "<%= applicationName %>ApiDomainStack", {
   env,
   core: coreStack,
-  certificateStack: certificateStack,
+  certificateStack: regionalCertificateStack,
 });
 apiDomainStack.addDependency(coreStack);
 apiDomainStack.addDependency(certificateStack);

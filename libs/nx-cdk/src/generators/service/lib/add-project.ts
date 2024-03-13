@@ -1,7 +1,8 @@
 import { addProjectConfiguration, ProjectConfiguration, Tree } from "@nx/devkit";
-import { ServiceGeneratorNormalizedSchema } from "./normalize-options";
+import {NormalizedSchema} from "../schema";
+import {join} from "path";
 
-export function addProject(host: Tree, options: ServiceGeneratorNormalizedSchema) {
+export function addProject(host: Tree, options: NormalizedSchema) {
   const targets: Record<string, any> = {
     deploy: {
       executor: "@leagueofsmurfs/nx-plugin:deploy",
@@ -55,13 +56,13 @@ export function addProject(host: Tree, options: ServiceGeneratorNormalizedSchema
   // };
 
   const project: ProjectConfiguration = {
-    root: options.serviceRoot,
-    sourceRoot: options.serviceSourceRoot,
+    root: options.appProjectRoot,
+    sourceRoot: join(options.appProjectRoot, "src"),
     projectType: "application",
     targets,
   };
 
-  addProjectConfiguration(host, options.serviceName, {
+  addProjectConfiguration(host, options.appProjectRoot, {
     ...project,
   });
 }

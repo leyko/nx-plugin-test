@@ -2,6 +2,7 @@ import { generateFiles, names, readJson, Tree } from "@nx/devkit";
 import { NormalizedSchema } from "../schema";
 import { getRelativePathToRootTsConfig } from "@nx/js";
 import { join } from "path";
+import {addProject} from "./add-project";
 
 export function createServiceFiles(host: Tree, options: NormalizedSchema) {
   const relativePathToRootTsConfig = getRelativePathToRootTsConfig(host, options.appProjectRoot);
@@ -22,6 +23,7 @@ export function createServiceFiles(host: Tree, options: NormalizedSchema) {
       join(options.appProjectRoot, "../service-core"),
       { ...templateVariables, stackName: `${templateVariables.applicationName}Core` },
     );
+    addProject(host, {...options, appProjectRoot: join(options.appProjectRoot, "../service-core") });
 
     generateFiles(
       host,
@@ -32,6 +34,7 @@ export function createServiceFiles(host: Tree, options: NormalizedSchema) {
         stackName: `${templateVariables.applicationName}GlobalCertificate`,
       },
     );
+    addProject(host, {...options, appProjectRoot: join(options.appProjectRoot, "../service-certificate-global") });
 
     generateFiles(
       host,
@@ -42,6 +45,7 @@ export function createServiceFiles(host: Tree, options: NormalizedSchema) {
         stackName: `${templateVariables.applicationName}RegionalCertificate`,
       },
     );
+    addProject(host, {...options, appProjectRoot: join(options.appProjectRoot, "../service-certificate-regional") });
 
     generateFiles(
       host,
@@ -49,6 +53,7 @@ export function createServiceFiles(host: Tree, options: NormalizedSchema) {
       join(options.appProjectRoot, "../service-api-domain"),
       { ...templateVariables, stackName: `${templateVariables.applicationName}ApiDomain` },
     );
+    addProject(host, {...options, appProjectRoot: join(options.appProjectRoot, "../service-api-domain") });
 
     generateFiles(
       host,
