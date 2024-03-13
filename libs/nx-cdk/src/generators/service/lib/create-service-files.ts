@@ -91,17 +91,17 @@ export function createServiceFiles(host: Tree, options: NormalizedSchema) {
     let content = host.read("bin/cdk.ts", "utf-8").trimEnd();
     content =
       `${content}\n\n` +
-      `const ${templateVariables.propertyName}Stateful = new ${templateVariables.stackName}StatefulStack(app, "${templateVariables.applicationName}${templateVariables.stackName}Stack", {
+      `const ${templateVariables.propertyName}Stateful = new ${templateVariables.stackName}StatefulStack(app, "${templateVariables.applicationName}${templateVariables.stackName}StatefulStack", {
     core: coreStack,
   });\n` +
         `${templateVariables.propertyName}Stateful.addDependency(coreStack);\n\n` +
       `const ${templateVariables.propertyName} = new ${templateVariables.stackName}Stack(app, "${templateVariables.applicationName}${templateVariables.stackName}Stack", {
         core: coreStack,
-        stateful: statefulStack, 
+        stateful: ${templateVariables.propertyName}Stateful, 
         apiDomainStack,
         });\n` +
       `${templateVariables.propertyName}.addDependency(coreStack);\n` +
-      `${templateVariables.propertyName}.addDependency(statefulStack);\n` +
+      `${templateVariables.propertyName}.addDependency(${templateVariables.propertyName}Stateful);\n` +
       `${templateVariables.propertyName}.addDependency(apiDomainStack);\n\n`;
 
     content = content.replace(
