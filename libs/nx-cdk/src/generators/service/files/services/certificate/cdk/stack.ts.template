@@ -1,5 +1,5 @@
 import { Construct } from "constructs";
-import { CertificateStack, CertificateStackProps } from "@itzworking/aws-cdk";
+import { CertificateStack, CertificateStackProps } from "@itzworking/cdk";
 
 export class <%= stackName %>Stack extends CertificateStack {
   constructor(scope: Construct, id: string, props: CertificateStackProps) {

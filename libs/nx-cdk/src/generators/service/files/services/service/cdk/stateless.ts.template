@@ -1,5 +1,5 @@
 import { Construct } from "constructs";
-import { StatelessStack, StatelessStackProps } from "@itzworking/aws-cdk";
+import { StatelessStack, StatelessStackProps } from "@itzworking/cdk";
 
 export class <%= stackName %>Stack extends StatelessStack {
   constructor(scope: Construct, id: string, props: StatelessStackProps) {
