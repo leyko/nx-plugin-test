@@ -86,4 +86,5 @@ export function createServiceFiles(host: Tree, options: NormalizedSchema) {
         options.appProjectRoot,
         templateVariables,
     );
+    host.rename(join(options.appProjectRoot, "cdk/src", "<%= fileName %>"), join(options.appProjectRoot, "cdk/src", templateVariables.fileName))
 }
