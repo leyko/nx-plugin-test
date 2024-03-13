@@ -1,0 +1,59 @@
+#!/usr/bin/env node
+import * as cdk from "aws-cdk-lib";
+import { <%= applicationName %>CoreStack } from "../apps/service-core/cdk/stack";
+import { <%= applicationName %>GlobalCertificateStack } from "../apps/service-certificate-global/cdk/stack";
+import { <%= applicationName %>RegionalCertificateStack } from "../apps/service-certificate-regional/cdk/stack";
+import { <%= applicationName %>ApiDomainStack } from "../apps/service-api-domain/cdk/stack";
+
+const app = new cdk.App();
+
+const env = {
+  account: process.env.CDK_DEPLOY_ACCOUNT || process.env.CDK_DEFAULT_ACCOUNT,
+  region: process.env.CDK_DEPLOY_REGION || process.env.CDK_DEFAULT_REGION,
+};
+
+
+/**
+ * Base architecture for <%= applicationName %>
+ */
+const coreStack = new <%= applicationName %>CoreStack(app, "<%= applicationName %>CoreStack", {
+  env,
+  applicationName: "<%= applicationName %>",
+});
+
+const globalCertificateStack = new <%= applicationName %>GlobalCertificateStack(
+  app,
+  "<%= applicationName %>GlobalCertificateStack",
+  {
+    env: {
+      ...env,
+      region: "us-east-1",
+    },
+    core: coreStack,
+  }
+);
+globalCertificateStack.addDependency(coreStack);
+
+const regionalCertificateStack = new <%= applicationName %>RegionalCertificateStack(
+  app,
+  "<%= applicationName %>RegionalCertificateStack",
+  {
+    env,
+    core: coreStack,
+  }
+);
+regionalCertificateStack.addDependency(coreStack);
+
+const apiDomainStack = new <%= applicationName %>ApiDomainStack(app, "<%= applicationName %>ApiDomainStack", {
+  env,
+  core: coreStack,
+  certificateStack: certificateStack,
+});
+apiDomainStack.addDependency(coreStack);
+apiDomainStack.addDependency(certificateStack);
+
+
+/**
+ * <%= applicationName %> services
+ */
+
