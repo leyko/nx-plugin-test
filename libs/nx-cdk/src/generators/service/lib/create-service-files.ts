@@ -87,4 +87,21 @@ export function createServiceFiles(host: Tree, options: NormalizedSchema) {
         templateVariables,
     );
     host.rename(join(options.appProjectRoot, "cdk/src", "<%= fileName %>"), join(options.appProjectRoot, "cdk/src", templateVariables.fileName))
+
+    let content = host.read("bin/cdk.ts", "utf-8").trimEnd();
+    content =
+      `${content}\n\n` +
+      `const ${templateVariables.constantName} = new ${templateVariables.stackName}StatefulStack(app, "${templateVariables.applicationName}${templateVariables.stackName}Stack", {});\n`;
+      `new ${templateVariables.stackName}Stack(app, "${templateVariables.applicationName}${templateVariables.stackName}Stack", {
+        core: coreStack,
+        stateful: statefulStack, 
+        apiDomainStack,
+        });\n`;
+
+    content = content.replace(
+      '";\n\n',
+      `";\nimport { ${templateVariables.stackName}StatefulStack } from "../apps/${options.appProjectRoot}/cdk/stack";` +
+      `\nimport { ${templateVariables.stackName}Stack } from "../apps/${options.appProjectRoot}/cdk/stack";\n\n`,
+    );
+    host.write("bin/cdk.ts", content);
 }
