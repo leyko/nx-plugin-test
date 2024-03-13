@@ -91,7 +91,9 @@ export function createServiceFiles(host: Tree, options: NormalizedSchema) {
     let content = host.read("bin/cdk.ts", "utf-8").trimEnd();
     content =
       `${content}\n\n` +
-      `const ${templateVariables.constantName} = new ${templateVariables.stackName}StatefulStack(app, "${templateVariables.applicationName}${templateVariables.stackName}Stack", {});\n`;
+      `const ${templateVariables.propertyName} = new ${templateVariables.stackName}StatefulStack(app, "${templateVariables.applicationName}${templateVariables.stackName}Stack", {
+    core: coreStack,
+  });\n`;
       `new ${templateVariables.stackName}Stack(app, "${templateVariables.applicationName}${templateVariables.stackName}Stack", {
         core: coreStack,
         stateful: statefulStack, 
@@ -100,8 +102,8 @@ export function createServiceFiles(host: Tree, options: NormalizedSchema) {
 
     content = content.replace(
       '";\n\n',
-      `";\nimport { ${templateVariables.stackName}StatefulStack } from "../apps/${options.appProjectRoot}/cdk/stack";` +
-      `\nimport { ${templateVariables.stackName}Stack } from "../apps/${options.appProjectRoot}/cdk/stack";\n\n`,
+      `";\nimport { ${templateVariables.stackName}StatefulStack } from "../apps/${options.appProjectRoot}/cdk/stateful";` +
+      `\nimport { ${templateVariables.stackName}Stack } from "../apps/${options.appProjectRoot}/cdk/stateless";\n\n`,
     );
     host.write("bin/cdk.ts", content);
 }
