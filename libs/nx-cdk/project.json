@@ -1,0 +1,41 @@
+{
+  "name": "nx-cdk",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/nx-cdk/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/nx-cdk",
+        "main": "libs/nx-cdk/src/index.ts",
+        "tsConfig": "libs/nx-cdk/tsconfig.lib.json",
+        "assets": [
+          "libs/nx-cdk/*.md",
+          {
+            "input": "./libs/nx-cdk/src",
+            "glob": "**/!(*.ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./libs/nx-cdk/src",
+            "glob": "**/*.d.ts",
+            "output": "./src"
+          },
+          {
+            "input": "./libs/nx-cdk",
+            "glob": "generators.json",
+            "output": "."
+          },
+          {
+            "input": "./libs/nx-cdk",
+            "glob": "executors.json",
+            "output": "."
+          }
+        ]
+      }
+    }
+  },
+  "tags": []
+}
