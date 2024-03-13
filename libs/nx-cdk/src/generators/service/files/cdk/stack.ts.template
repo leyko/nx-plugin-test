@@ -1,8 +1,0 @@
-import { Construct } from "constructs";
-import { BaseStack, BaseStackProps } from "@leagueofsmurfs/aws-cdk";
-
-export class <%= stackName %>Stack extends BaseStack {
-  constructor(scope: Construct, id: string, props: BaseStackProps) {
-    super(scope, id, props);
-  }
-}

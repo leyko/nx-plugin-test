@@ -61,6 +61,14 @@ export function createServiceFiles(host: Tree, options: NormalizedSchema) {
       join(options.appProjectRoot, "../../bin"),
       templateVariables,
     );
+
+    generateFiles(
+        host,
+        join(__dirname, "../files/all"),
+        join(options.appProjectRoot, "../all"),
+        templateVariables,
+    );
+    addProject(host, {...options, appProjectRoot: join(options.appProjectRoot, "../all") });
   }
 
   generateFiles(
