@@ -31,7 +31,7 @@ export async function serviceGenerator(host: Tree, schema: Schema) {
     shared.extractTsConfigBase(host);
 
     createServiceFiles(host, options);
-    addProject(host, options);
+    addProject(host, {...options, name: `service-${options.name}`});
 
     // const e2eTask = await addE2e(host, options);
     // tasks.push(e2eTask);

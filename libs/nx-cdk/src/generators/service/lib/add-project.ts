@@ -56,8 +56,9 @@ export function addProject(host: Tree, options: NormalizedSchema) {
   // };
 
   const project: ProjectConfiguration = {
+    name: options.name,
     root: options.appProjectRoot,
-    sourceRoot: join(options.appProjectRoot, "src"),
+    sourceRoot: options.appProjectRoot,
     projectType: "application",
     targets,
   };
