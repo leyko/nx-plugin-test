@@ -50,7 +50,7 @@ const apiDomainStack = new <%= applicationName %>ApiDomainStack(app, "<%= applic
   certificateStack: regionalCertificateStack,
 });
 apiDomainStack.addDependency(coreStack);
-apiDomainStack.addDependency(certificateStack);
+apiDomainStack.addDependency(regionalCertificateStack);
 
 
 /**
