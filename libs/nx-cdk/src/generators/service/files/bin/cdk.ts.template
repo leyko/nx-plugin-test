@@ -16,14 +16,14 @@ const env = {
 /**
  * Base architecture for <%= applicationName %>
  */
-const coreStack = new <%= applicationName %>CoreStack(app, "<%= applicationName %>CoreStack", {
+const coreStack = new <%= applicationName %>CoreStack(app, "<%= applicationName %>Core", {
   env,
   applicationName: "<%= applicationName %>",
 });
 
 const globalCertificateStack = new <%= applicationName %>GlobalCertificateStack(
   app,
-  "<%= applicationName %>GlobalCertificateStack",
+  "<%= applicationName %>GlobalCertificate",
   {
     env: {
       ...env,
@@ -36,7 +36,7 @@ globalCertificateStack.addDependency(coreStack);
 
 const regionalCertificateStack = new <%= applicationName %>RegionalCertificateStack(
   app,
-  "<%= applicationName %>RegionalCertificateStack",
+  "<%= applicationName %>RegionalCertificate",
   {
     env,
     core: coreStack,
@@ -44,7 +44,7 @@ const regionalCertificateStack = new <%= applicationName %>RegionalCertificateSt
 );
 regionalCertificateStack.addDependency(coreStack);
 
-const apiDomainStack = new <%= applicationName %>ApiDomainStack(app, "<%= applicationName %>ApiDomainStack", {
+const apiDomainStack = new <%= applicationName %>ApiDomainStack(app, "<%= applicationName %>ApiDomain", {
   env,
   core: coreStack,
   certificateStack: regionalCertificateStack,
