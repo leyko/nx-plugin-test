@@ -95,10 +95,11 @@ export function createServiceFiles(host: Tree, options: NormalizedSchema) {
     content =
       `${content}\n\n` +
       `const ${templateVariables.propertyName}Stateful = new ${templateVariables.stackName}StatefulStack(app, "${templateVariables.applicationName}${templateVariables.stackName}Stateful", {
-    core: coreStack,
+    env,core: coreStack,
   });\n` +
         `${templateVariables.propertyName}Stateful.addDependency(coreStack);\n\n` +
       `const ${templateVariables.propertyName} = new ${templateVariables.stackName}Stack(app, "${templateVariables.applicationName}${templateVariables.stackName}", {
+      env,
         core: coreStack,
         stateful: ${templateVariables.propertyName}Stateful, 
         apiDomainStack,
