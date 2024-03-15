@@ -108,8 +108,8 @@ export function createServiceFiles(host: Tree, options: NormalizedSchema) {
       `${templateVariables.propertyName}.addDependency(apiDomainStack);\n\n`;
 
     content = content.replace(
-      '";\n\n',
-      `";\nimport { ${templateVariables.stackName}StatefulStack } from "../${options.appProjectRoot}/cdk/stateful";` +
+      ';\n\n',
+      `;\nimport { ${templateVariables.stackName}StatefulStack } from "../${options.appProjectRoot}/cdk/stateful";` +
       `\nimport { ${templateVariables.stackName}Stack } from "../${options.appProjectRoot}/cdk/stateless";\n\n`,
     );
     host.write("bin/cdk.ts", content);

@@ -7,9 +7,9 @@ import {
 } from "@nx/devkit";
 import { InitSchema } from "./schema";
 import {
-  awsCdkConstructsVersion,
-  awsCdkEslintVersion,
-  awsCdkVersion,
+    awsCdkConstructsVersion,
+    awsCdkEslintVersion,
+    awsCdkVersion, esbuildVersion,
 } from "../../utils/versions";
 
 export async function nxCdkInitGenerator(host: Tree, schema: InitSchema) {
@@ -25,6 +25,7 @@ export async function nxCdkInitGenerator(host: Tree, schema: InitSchema) {
           constructs: awsCdkConstructsVersion,
         },
         {
+            "esbuild": esbuildVersion,
           "eslint-plugin-cdk": awsCdkEslintVersion,
         },
         undefined,

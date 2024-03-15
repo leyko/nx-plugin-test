@@ -1,5 +1,6 @@
-import {Schema} from "./schema";
+import { execSync } from "child_process";
 import {ExecutorContext} from "@nx/devkit";
+import {Schema} from "./schema";
 
 const NX_WORKSPACE_ROOT = process.env.NX_WORKSPACE_ROOT ?? "";
 if (!NX_WORKSPACE_ROOT) {
@@ -33,10 +34,10 @@ export default async function runDeployExecutor(schema: Schema, context: Executo
     command += ` --require-approval=never${awsProfileArg(schema.profile)}`;
     console.log(command);
 
-    // execSync(command, {
-    //   cwd: context.root,
-    //   stdio: "inherit",
-    // });
+    execSync(command, {
+      cwd: context.root,
+      stdio: "inherit",
+    });
 
     return {
         success: true,
