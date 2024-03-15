@@ -5,11 +5,11 @@ import {join} from "path";
 export function addProject(host: Tree, options: NormalizedSchema) {
   const targets: Record<string, any> = {
     deploy: {
-      executor: "@leagueofsmurfs/nx-plugin:deploy",
+      executor: "@nx-plugin-test/nx-cdk:deploy",
       options: {},
     },
     destroy: {
-      executor: "@leagueofsmurfs/nx-plugin:destroy",
+      executor: "@nx-plugin-test/nx-cdk:destroy",
       options: {},
     },
   };

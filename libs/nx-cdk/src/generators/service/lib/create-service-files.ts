@@ -88,6 +88,9 @@ export function createServiceFiles(host: Tree, options: NormalizedSchema) {
     );
     host.rename(join(options.appProjectRoot, "cdk/src/apis", "fileName"), join(options.appProjectRoot, "cdk/src/apis", templateVariables.fileName))
 
+    if (!host.exists("bin/cdk.ts")) {
+        return;
+    }
     let content = host.read("bin/cdk.ts", "utf-8").trimEnd();
     content =
       `${content}\n\n` +

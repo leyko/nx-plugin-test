@@ -7,7 +7,7 @@ import {Schema} from "./schema";
 import * as shared from "@nx/js/src/utils/typescript/create-ts-config";
 import {createServiceFiles} from "./lib/create-service-files";
 
-export async function serviceGenerator(host: Tree, schema: Schema) {
+export async function nxCdkServiceGenerator(host: Tree, schema: Schema) {
     const tasks: GeneratorCallback[] = [];
     const options = await normalizeOptions(host, schema);
 
@@ -62,4 +62,4 @@ export async function serviceGenerator(host: Tree, schema: Schema) {
     return runTasksInSerial(...tasks);
 }
 
-export default serviceGenerator;
+export default nxCdkServiceGenerator;

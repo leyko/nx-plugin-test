@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "version": 2,
+  "title": "Deploy executor",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "profile": {
+      "description": "AWS profile to use.",
+      "type": "string",
+      "default": "default"
+    }
+  },
+  "required": []
+}

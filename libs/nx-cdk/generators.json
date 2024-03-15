@@ -7,7 +7,7 @@
       "hidden": true
     },
     "service": {
-      "factory": "./src/generators/service/service",
+      "factory": "./src/generators/service/service#nxCdkServiceGenerator",
       "schema": "./src/generators/service/schema.json",
       "description": "service generator"
     }
