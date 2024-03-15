@@ -12,13 +12,14 @@ const env = {
   region: process.env.CDK_DEPLOY_REGION || process.env.CDK_DEFAULT_REGION,
 };
 
+const applicationName = "<%= applicationName %>";
 
 /**
  * Base architecture for <%= applicationName %>
  */
 const coreStack = new <%= applicationName %>CoreStack(app, "<%= applicationName %>Core", {
   env,
-  applicationName: "<%= applicationName %>",
+  applicationName,
 });
 
 const globalCertificateStack = new <%= applicationName %>GlobalCertificateStack(
@@ -29,7 +30,7 @@ const globalCertificateStack = new <%= applicationName %>GlobalCertificateStack(
       ...env,
       region: "us-east-1",
     },
-    core: coreStack,
+    applicationName,
   }
 );
 globalCertificateStack.addDependency(coreStack);
@@ -39,7 +40,7 @@ const regionalCertificateStack = new <%= applicationName %>RegionalCertificateSt
   "<%= applicationName %>RegionalCertificate",
   {
     env,
-    core: coreStack,
+    applicationName,
   }
 );
 regionalCertificateStack.addDependency(coreStack);
