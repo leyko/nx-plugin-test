@@ -5,7 +5,7 @@
   "scripts": {},
   "private": true,
   "dependencies": {
-    "@itzworking/cdk": "0.0.3",
+    "@itzworking/cdk": "0.0.5",
     "@nx/devkit": "18.0.8",
     "aws-cdk": "2.122.0",
     "aws-cdk-lib": "2.122.0",
