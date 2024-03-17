@@ -5,6 +5,9 @@
   "scripts": {},
   "private": true,
   "dependencies": {
+    "@aws-sdk/client-route-53": "3.535.0",
+    "@aws-sdk/client-ssm": "3.535.0",
+    "@aws-sdk/credential-providers": "3.535.0",
     "@itzworking/cdk": "0.0.7",
     "@nx/devkit": "18.0.8",
     "aws-cdk": "2.122.0",
@@ -34,6 +37,7 @@
     "@typescript-eslint/eslint-plugin": "^6.13.2",
     "@typescript-eslint/parser": "^6.13.2",
     "babel-jest": "^29.4.1",
+    "enquirer": "2.4.1",
     "esbuild": "0.20.2",
     "eslint": "~8.48.0",
     "eslint-config-next": "14.0.4",
@@ -49,7 +53,8 @@
     "prettier": "^2.6.2",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
-    "typescript": "~5.3.2"
+    "typescript": "~5.3.2",
+    "yargs": "17.7.2"
   },
   "workspaces": [
     "packages/*"

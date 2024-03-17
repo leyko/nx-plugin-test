@@ -4,13 +4,16 @@ import {
   GeneratorCallback,
   runTasksInSerial,
   Tree,
-} from "@nx/devkit";
-import { InitSchema } from "./schema";
+} from '@nx/devkit';
+import { InitSchema } from './schema';
 import {
-    awsCdkConstructsVersion,
-    awsCdkEslintVersion,
-    awsCdkVersion, esbuildVersion,
-} from "../../utils/versions";
+  awsCdkConstructsVersion,
+  awsCdkEslintVersion,
+  awsCdkVersion,
+  enquirerVersion,
+  esbuildVersion,
+  yargsVersion,
+} from '../../utils/versions';
 
 export async function nxCdkInitGenerator(host: Tree, schema: InitSchema) {
   const tasks: GeneratorCallback[] = [];
@@ -20,13 +23,15 @@ export async function nxCdkInitGenerator(host: Tree, schema: InitSchema) {
       addDependenciesToPackageJson(
         host,
         {
-          "aws-cdk": awsCdkVersion,
-          "aws-cdk-lib": awsCdkVersion,
+          'aws-cdk': awsCdkVersion,
+          'aws-cdk-lib': awsCdkVersion,
           constructs: awsCdkConstructsVersion,
         },
         {
-            "esbuild": esbuildVersion,
-          "eslint-plugin-cdk": awsCdkEslintVersion,
+          enquirer: enquirerVersion,
+          esbuild: esbuildVersion,
+          'eslint-plugin-cdk': awsCdkEslintVersion,
+          yargs: yargsVersion,
         },
         undefined,
         schema.keepExistingVersions
