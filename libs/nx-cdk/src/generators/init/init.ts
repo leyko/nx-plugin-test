@@ -14,6 +14,7 @@ import {
   esbuildVersion,
   yargsVersion,
 } from '../../utils/versions';
+import { addGitIgnoreEntry } from './lib/add-gitignore-entry';
 
 export async function nxCdkInitGenerator(host: Tree, schema: InitSchema) {
   const tasks: GeneratorCallback[] = [];
@@ -42,6 +43,8 @@ export async function nxCdkInitGenerator(host: Tree, schema: InitSchema) {
   if (!schema.skipFormat) {
     await formatFiles(host);
   }
+
+  addGitIgnoreEntry(host);
 
   return runTasksInSerial(...tasks);
 }
