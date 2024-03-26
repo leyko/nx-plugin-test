@@ -12,7 +12,7 @@ import {
   SSMClient,
 } from '@aws-sdk/client-ssm';
 
-const ssmPrefix = `/<%= applicationFileName %>`;
+const ssmPrefix = '/<%= applicationFileName %>';
 
 const argv = yargs(hideBin(process.argv)).argv;
 
