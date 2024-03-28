@@ -16,8 +16,7 @@ export function addGitIgnoreEntry(host: Tree) {
       `${content}\n\n# CDK\n` +
       '.cdk.staging\n' +
       'cdk.out\n' +
-      'cdk.context.json\n' +
-      'cdk.config.json\n';
+      'cdk.context.json\n';
   }
 
   host.write('.gitignore', content);
