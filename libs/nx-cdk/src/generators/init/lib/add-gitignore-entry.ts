@@ -13,7 +13,7 @@ export function addGitIgnoreEntry(host: Tree) {
 
   if (!ig.ignores('apps/example/cdk.out')) {
     content =
-      `${content}\n\n\n# CDK\n` +
+      `${content}\n\n# CDK\n` +
       '.cdk.staging\n' +
       'cdk.out\n' +
       'cdk.context.json\n' +

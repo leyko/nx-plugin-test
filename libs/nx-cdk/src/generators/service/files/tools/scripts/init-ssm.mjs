@@ -19,10 +19,14 @@ const argv = yargs(hideBin(process.argv)).argv;
 const config = {
   ...(argv.profile ? { credentials: fromIni({ profile: argv.profile }) } : {}),
 };
-const route53 = new Route53Client(config);
-const ssm = new SSMClient(config);
 
 (async () => {
+  const route53 = new Route53Client(config);
+  const ssm = new SSMClient(config);
+
+  const currentRegion = await ssm.config.region();
+  const globalSsm = new SSMClient({ ...config, region: 'us-east-1' });
+
   const { HostedZones: hostedZones } = await route53.send(
     new ListHostedZonesCommand({})
   );
@@ -61,7 +65,7 @@ const ssm = new SSMClient(config);
       type: 'select',
       name: 'hosted-zone-name',
       message: 'Hosted zone:',
-      choices: hostedZones.map((zone) => zone.Name),
+      choices: hostedZones.map((zone) => zone.Name.slice(0, -1)),
       initial: configs.hostedZoneName,
     },
     {
@@ -131,22 +135,28 @@ const ssm = new SSMClient(config);
 
   for (const [key, value] of Object.entries(response)) {
     if (key === 'hosted-zone-name') {
-      await ssm.send(
-        new PutParameterCommand({
-          Type: 'String',
-          Name: `${ssmPrefix}/hosted-zone-id`,
-          Value: hostedZones.find((hz) => hz.Name === value)?.Id,
-          Overwrite: true,
-        })
-      );
-    }
-    await ssm.send(
-      new PutParameterCommand({
+      const hostedZoneItInput = new PutParameterCommand({
         Type: 'String',
-        Name: `${ssmPrefix}/${key}`,
-        Value: value,
+        Name: `${ssmPrefix}/hosted-zone-id`,
+        Value: hostedZones
+          .find((hz) => hz.Name.slice(0, -1) === value)
+          ?.Id.replace('/hostedzone/', ''),
         Overwrite: true,
-      })
-    );
+      });
+      await ssm.send(hostedZoneItInput);
+      if (currentRegion !== 'us-east-1') {
+        await globalSsm.send(hostedZoneItInput);
+      }
+    }
+    const input = new PutParameterCommand({
+      Type: 'String',
+      Name: `${ssmPrefix}/${key}`,
+      Value: value,
+      Overwrite: true,
+    });
+    await ssm.send(input);
+    if (currentRegion !== 'us-east-1') {
+      await globalSsm.send(input);
+    }
   }
 })();

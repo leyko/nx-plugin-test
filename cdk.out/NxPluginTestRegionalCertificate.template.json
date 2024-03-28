@@ -1,0 +1,116 @@
+{
+ "Parameters": {
+  "SsmParameterValuenxplugintestenvironmenttypeC96584B6F00A464EAD1953AFF4B05118Parameter": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/nx-plugin-test/environment-type"
+  },
+  "SsmParameterValuenxplugintestdomainnameC96584B6F00A464EAD1953AFF4B05118Parameter": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/nx-plugin-test/domain-name"
+  },
+  "SsmParameterValuenxplugintesthostedzoneidC96584B6F00A464EAD1953AFF4B05118Parameter": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/nx-plugin-test/hosted-zone-id"
+  },
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Resources": {
+  "WildcardCertificate25A2E830": {
+   "Type": "AWS::CertificateManager::Certificate",
+   "Properties": {
+    "DomainName": {
+     "Ref": "SsmParameterValuenxplugintestdomainnameC96584B6F00A464EAD1953AFF4B05118Parameter"
+    },
+    "DomainValidationOptions": [
+     {
+      "DomainName": {
+       "Ref": "SsmParameterValuenxplugintestdomainnameC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "HostedZoneId": {
+       "Ref": "SsmParameterValuenxplugintesthostedzoneidC96584B6F00A464EAD1953AFF4B05118Parameter"
+      }
+     }
+    ],
+    "SubjectAlternativeNames": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "*.",
+        {
+         "Ref": "SsmParameterValuenxplugintestdomainnameC96584B6F00A464EAD1953AFF4B05118Parameter"
+        }
+       ]
+      ]
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "itw:stack:stateful",
+      "Value": "false"
+     },
+     {
+      "Key": "Name",
+      "Value": "NxPluginTestRegionalCertificate/WildcardCertificate"
+     }
+    ],
+    "ValidationMethod": "DNS"
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain",
+   "Metadata": {
+    "aws:cdk:path": "NxPluginTestRegionalCertificate/WildcardCertificate/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/02NQQ6CMBBFz8K+HW1X7LmAwQOYcRjMgC3JdNAF4e5CiNHVz/v5Lz9CiBHOFb6Lp270T7nDcjWk0TV9vqBiYmN1LZdpVmK3DW/EatILoXHCjA9WWJpft5t/uO789VeXp45hKKdXqLdvCNVQRLzO2SQxtEd+APMFSPuXAAAA"
+   },
+   "Metadata": {
+    "aws:cdk:path": "NxPluginTestRegionalCertificate/CDKMetadata/Default"
+   }
+  }
+ },
+ "Outputs": {
+  "ExportsOutputRefWildcardCertificate25A2E830CD34CBD7": {
+   "Value": {
+    "Ref": "WildcardCertificate25A2E830"
+   },
+   "Export": {
+    "Name": "NxPluginTestRegionalCertificate:ExportsOutputRefWildcardCertificate25A2E830CD34CBD7"
+   }
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}
