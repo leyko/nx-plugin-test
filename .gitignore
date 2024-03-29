@@ -43,8 +43,3 @@ Thumbs.db
 # Next.js
 .next
 out
-
-# CDK
-.cdk.staging
-cdk.out
-cdk.context.json
