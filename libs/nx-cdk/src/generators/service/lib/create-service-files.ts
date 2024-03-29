@@ -150,10 +150,25 @@ export function createServiceFiles(host: Tree, options: NormalizedSchema) {
     `${templateVariables.propertyName}.addDependency(${templateVariables.propertyName}Stateful);\n` +
     `${templateVariables.propertyName}.addDependency(apiDomainStack);\n\n`;
 
-  content = content.replace(
-    ';\n\n',
-    `;\nimport { ${templateVariables.stackName}StatefulStack } from "../${options.appProjectRoot}/cdk/stateful";` +
-      `\nimport { ${templateVariables.stackName}Stack } from "../${options.appProjectRoot}/cdk/stateless";\n\n`
-  );
+  const newImports =
+    `import { ${templateVariables.stackName}StatefulStack } from "../${options.appProjectRoot}/cdk/stateful";\n` +
+    `import { ${templateVariables.stackName}Stack } from "../${options.appProjectRoot}/cdk/stateless";\n`;
+
+  const contentLines = content.split('\n');
+  let lastImportIndex = -1;
+  for (let i = 0; i < contentLines.length; i++) {
+    if (contentLines[i].startsWith('import ')) {
+      lastImportIndex = i;
+    }
+  }
+
+  if (lastImportIndex === -1) {
+    content = `${newImports}\n\n${content}`;
+  } else {
+    // Insert the new imports after the last import statement
+    contentLines.splice(lastImportIndex + 1, 0, newImports.trim());
+    content = contentLines.join('\n');
+  }
+
   host.write('bin/cdk.ts', content);
 }
