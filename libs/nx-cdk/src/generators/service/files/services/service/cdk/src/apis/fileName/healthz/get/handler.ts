@@ -1,3 +1,3 @@
-export const handler = () => {
-  return { statusCode: 204 };
+export const handler = async () => {
+  return { statusCode: 200, body: JSON.stringify({ status: 'OK' }) };
 };

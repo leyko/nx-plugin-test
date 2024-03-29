@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../apps/service-test1/cdk/src/apis/test1/healthz/get/handler.ts"],
-  "sourcesContent": ["export const handler = () => {\n  return { statusCode: 204 };\n};\n"],
-  "mappings": ";;;;;AAAO,IAAM,UAAU,6BAAM;AAC3B,SAAO,EAAE,YAAY,IAAI;AAC3B,GAFuB;",
-  "names": []
-}
