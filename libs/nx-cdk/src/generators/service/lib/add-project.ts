@@ -1,15 +1,23 @@
-import { addProjectConfiguration, ProjectConfiguration, Tree } from "@nx/devkit";
-import {NormalizedSchema} from "../schema";
-import {join} from "path";
+import {
+  addProjectConfiguration,
+  ProjectConfiguration,
+  Tree,
+} from "@nx/devkit";
+import { NormalizedSchema } from "../schema";
+
+interface Target {
+  executor: string;
+  options: any;
+}
 
 export function addProject(host: Tree, options: NormalizedSchema) {
-  const targets: Record<string, any> = {
+  const targets: Record<string, Target> = {
     deploy: {
-      executor: "@nx-plugin-test/nx-cdk:deploy",
+      executor: "@itzworking/nx-cdk:deploy",
       options: {},
     },
     destroy: {
-      executor: "@nx-plugin-test/nx-cdk:destroy",
+      executor: "@itzworking/nx-cdk:destroy",
       options: {},
     },
   };

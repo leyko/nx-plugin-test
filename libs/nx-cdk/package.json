@@ -1,8 +1,16 @@
 {
-  "name": "nx-cdk",
-  "version": "0.0.1",
+  "name": "@itzworking/nx-cdk",
+  "version": "0.0.20",
   "dependencies": {
     "tslib": "^2.3.0"
+  },
+  "peerDependencies": {
+    "@nx/devkit": "18.x",
+    "@nx/js": "18.x",
+    "enquirer": "2.x",
+    "ignore": "5.x",
+    "nx": "18.x",
+    "yargs": "17.x"
   },
   "type": "commonjs",
   "main": "./src/index.js",
