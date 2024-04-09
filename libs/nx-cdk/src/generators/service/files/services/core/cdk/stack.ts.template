@@ -1,8 +1,0 @@
-import { Construct } from "constructs";
-import { CoreStack, CoreStackProps } from "@itzworking/cdk";
-
-export class <%= stackName %>Stack extends CoreStack {
-  constructor(scope: Construct, id: string, props: CoreStackProps) {
-    super(scope, id, props);
-  }
-}

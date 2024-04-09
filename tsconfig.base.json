@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@itzworking/nx-cdk": ["libs/nx-cdk/src/index.ts"]
+      "@itzworking/nx-cdk": ["../itzworking/libs/nx-cdk/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

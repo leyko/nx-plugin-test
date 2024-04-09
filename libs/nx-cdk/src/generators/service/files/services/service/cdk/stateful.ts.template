@@ -1,8 +1,0 @@
-import { Construct } from "constructs";
-import { StatefulStack, StatefulStackProps } from "@itzworking/cdk";
-
-export class <%= stackName %>StatefulStack extends StatefulStack {
-  constructor(scope: Construct, id: string, props: StatefulStackProps) {
-    super(scope, id, props);
-  }
-}

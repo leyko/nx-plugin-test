@@ -2,7 +2,7 @@
 
 ---  
 ```
-nx g @nx-plugin-test/nx-cdk:service test1
+nx g @itzworking/nx-cdk:service test1
 ```
 ```
 node ./tools/scripts/init-ssm.mjs --profile jca-kodehyve

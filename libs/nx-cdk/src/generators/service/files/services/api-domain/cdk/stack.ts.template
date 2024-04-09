@@ -1,8 +1,0 @@
-import { Construct } from "constructs";
-import { ApiDomainStack, ApiDomainStackProps } from "@itzworking/cdk";
-
-export class <%= stackName %>Stack extends ApiDomainStack {
-  constructor(scope: Construct, id: string, props: ApiDomainStackProps) {
-    super(scope, id, props);
-  }
-}
