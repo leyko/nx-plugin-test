@@ -1,0 +1,703 @@
+{
+  "version": "36.0.0",
+  "artifacts": {
+    "NxPluginTestMainCore.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "NxPluginTestMainCore.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "NxPluginTestMainCore": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://284588248117/eu-west-1",
+      "properties": {
+        "templateFile": "NxPluginTestMainCore.template.json",
+        "terminationProtection": false,
+        "tags": {
+          "itw:stack:stateful": "true"
+        },
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::284588248117:role/cdk-hnb659fds-deploy-role-284588248117-eu-west-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::284588248117:role/cdk-hnb659fds-cfn-exec-role-284588248117-eu-west-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-284588248117-eu-west-1/3312600a08b4313354957cbb1b581b9a069273be2cdf70af51e566556c24ca7c.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "NxPluginTestMainCore.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::284588248117:role/cdk-hnb659fds-lookup-role-284588248117-eu-west-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "NxPluginTestMainCore.assets"
+      ],
+      "metadata": {
+        "/NxPluginTestMainCore": [
+          {
+            "type": "aws:cdk:stack-tags",
+            "data": [
+              {
+                "Key": "itw:stack:stateful",
+                "Value": "true"
+              }
+            ]
+          }
+        ],
+        "/NxPluginTestMainCore/SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SsmParameterValuenxplugintestmainenvironmenttypeC96584B6F00A464EAD1953AFF4B05118Parameter"
+          }
+        ],
+        "/NxPluginTestMainCore/SsmParameterValue:--nx-plugin-test-main--removal-policy:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SsmParameterValuenxplugintestmainremovalpolicyC96584B6F00A464EAD1953AFF4B05118Parameter"
+          }
+        ],
+        "/NxPluginTestMainCore/MainEventBus/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MainEventBus78A0DEF9"
+          }
+        ],
+        "/NxPluginTestMainCore/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/NxPluginTestMainCore/Exports/Output{\"Ref\":\"MainEventBus78A0DEF9\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefMainEventBus78A0DEF9EB5CAD12"
+          }
+        ],
+        "/NxPluginTestMainCore/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/NxPluginTestMainCore/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "NxPluginTestMainCore"
+    },
+    "NxPluginTestMainGlobalCertificate.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "NxPluginTestMainGlobalCertificate.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "NxPluginTestMainGlobalCertificate": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://284588248117/us-east-1",
+      "properties": {
+        "templateFile": "NxPluginTestMainGlobalCertificate.template.json",
+        "terminationProtection": false,
+        "tags": {
+          "itw:stack:stateful": "false"
+        },
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::284588248117:role/cdk-hnb659fds-deploy-role-284588248117-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::284588248117:role/cdk-hnb659fds-cfn-exec-role-284588248117-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-284588248117-us-east-1/bb9d31166c52755914a07e7e1a18dd75c743b3909ec79da2e0641318e22d336a.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "NxPluginTestMainGlobalCertificate.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::284588248117:role/cdk-hnb659fds-lookup-role-284588248117-us-east-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "NxPluginTestMainCore",
+        "NxPluginTestMainGlobalCertificate.assets"
+      ],
+      "metadata": {
+        "/NxPluginTestMainGlobalCertificate": [
+          {
+            "type": "aws:cdk:stack-tags",
+            "data": [
+              {
+                "Key": "itw:stack:stateful",
+                "Value": "false"
+              }
+            ]
+          }
+        ],
+        "/NxPluginTestMainGlobalCertificate/SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SsmParameterValuenxplugintestmainenvironmenttypeC96584B6F00A464EAD1953AFF4B05118Parameter"
+          }
+        ],
+        "/NxPluginTestMainGlobalCertificate/SsmParameterValue:--nx-plugin-test-main--domain-name:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SsmParameterValuenxplugintestmaindomainnameC96584B6F00A464EAD1953AFF4B05118Parameter"
+          }
+        ],
+        "/NxPluginTestMainGlobalCertificate/SsmParameterValue:--nx-plugin-test-main--hosted-zone-id:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SsmParameterValuenxplugintestmainhostedzoneidC96584B6F00A464EAD1953AFF4B05118Parameter"
+          }
+        ],
+        "/NxPluginTestMainGlobalCertificate/WildcardCertificate/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WildcardCertificate25A2E830"
+          }
+        ],
+        "/NxPluginTestMainGlobalCertificate/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/NxPluginTestMainGlobalCertificate/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/NxPluginTestMainGlobalCertificate/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "NxPluginTestMainGlobalCertificate"
+    },
+    "NxPluginTestMainRegionalCertificate.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "NxPluginTestMainRegionalCertificate.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "NxPluginTestMainRegionalCertificate": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://284588248117/eu-west-1",
+      "properties": {
+        "templateFile": "NxPluginTestMainRegionalCertificate.template.json",
+        "terminationProtection": false,
+        "tags": {
+          "itw:stack:stateful": "false"
+        },
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::284588248117:role/cdk-hnb659fds-deploy-role-284588248117-eu-west-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::284588248117:role/cdk-hnb659fds-cfn-exec-role-284588248117-eu-west-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-284588248117-eu-west-1/91940e69eb0d8f284ac8a2c87fb64f78c0cbc7065bfc065de35263fbd8352fad.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "NxPluginTestMainRegionalCertificate.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::284588248117:role/cdk-hnb659fds-lookup-role-284588248117-eu-west-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "NxPluginTestMainCore",
+        "NxPluginTestMainRegionalCertificate.assets"
+      ],
+      "metadata": {
+        "/NxPluginTestMainRegionalCertificate": [
+          {
+            "type": "aws:cdk:stack-tags",
+            "data": [
+              {
+                "Key": "itw:stack:stateful",
+                "Value": "false"
+              }
+            ]
+          }
+        ],
+        "/NxPluginTestMainRegionalCertificate/SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SsmParameterValuenxplugintestmainenvironmenttypeC96584B6F00A464EAD1953AFF4B05118Parameter"
+          }
+        ],
+        "/NxPluginTestMainRegionalCertificate/SsmParameterValue:--nx-plugin-test-main--domain-name:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SsmParameterValuenxplugintestmaindomainnameC96584B6F00A464EAD1953AFF4B05118Parameter"
+          }
+        ],
+        "/NxPluginTestMainRegionalCertificate/SsmParameterValue:--nx-plugin-test-main--hosted-zone-id:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SsmParameterValuenxplugintestmainhostedzoneidC96584B6F00A464EAD1953AFF4B05118Parameter"
+          }
+        ],
+        "/NxPluginTestMainRegionalCertificate/WildcardCertificate/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WildcardCertificate25A2E830"
+          }
+        ],
+        "/NxPluginTestMainRegionalCertificate/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/NxPluginTestMainRegionalCertificate/Exports/Output{\"Ref\":\"WildcardCertificate25A2E830\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefWildcardCertificate25A2E830CD34CBD7"
+          }
+        ],
+        "/NxPluginTestMainRegionalCertificate/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/NxPluginTestMainRegionalCertificate/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "NxPluginTestMainRegionalCertificate"
+    },
+    "NxPluginTestMainApiDomain.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "NxPluginTestMainApiDomain.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "NxPluginTestMainApiDomain": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://284588248117/eu-west-1",
+      "properties": {
+        "templateFile": "NxPluginTestMainApiDomain.template.json",
+        "terminationProtection": false,
+        "tags": {
+          "itw:stack:stateful": "false"
+        },
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::284588248117:role/cdk-hnb659fds-deploy-role-284588248117-eu-west-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::284588248117:role/cdk-hnb659fds-cfn-exec-role-284588248117-eu-west-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-284588248117-eu-west-1/ef163fb63fce84f626dc5671f834895bee49bcf30d353d7a7dd99c0c102a7ced.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "NxPluginTestMainApiDomain.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::284588248117:role/cdk-hnb659fds-lookup-role-284588248117-eu-west-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "NxPluginTestMainCore",
+        "NxPluginTestMainRegionalCertificate",
+        "NxPluginTestMainApiDomain.assets"
+      ],
+      "metadata": {
+        "/NxPluginTestMainApiDomain": [
+          {
+            "type": "aws:cdk:stack-tags",
+            "data": [
+              {
+                "Key": "itw:stack:stateful",
+                "Value": "false"
+              }
+            ]
+          }
+        ],
+        "/NxPluginTestMainApiDomain/SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SsmParameterValuenxplugintestmainenvironmenttypeC96584B6F00A464EAD1953AFF4B05118Parameter"
+          }
+        ],
+        "/NxPluginTestMainApiDomain/SsmParameterValue:--nx-plugin-test-main--domain-name:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SsmParameterValuenxplugintestmaindomainnameC96584B6F00A464EAD1953AFF4B05118Parameter"
+          }
+        ],
+        "/NxPluginTestMainApiDomain/ApiDomainName/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiDomainNameEB571102"
+          }
+        ],
+        "/NxPluginTestMainApiDomain/SsmParameterValue:--nx-plugin-test-main--hosted-zone-id:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SsmParameterValuenxplugintestmainhostedzoneidC96584B6F00A464EAD1953AFF4B05118Parameter"
+          }
+        ],
+        "/NxPluginTestMainApiDomain/SsmParameterValue:--nx-plugin-test-main--hosted-zone-name:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SsmParameterValuenxplugintestmainhostedzonenameC96584B6F00A464EAD1953AFF4B05118Parameter"
+          }
+        ],
+        "/NxPluginTestMainApiDomain/ApiDomainAliasRecord/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiDomainAliasRecord39245C52"
+          }
+        ],
+        "/NxPluginTestMainApiDomain/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/NxPluginTestMainApiDomain/Exports/Output{\"Ref\":\"ApiDomainNameEB571102\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefApiDomainNameEB571102DA4FDB49"
+          }
+        ],
+        "/NxPluginTestMainApiDomain/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/NxPluginTestMainApiDomain/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "NxPluginTestMainApiDomain"
+    },
+    "NxPluginTestMainTest1Stateful.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "NxPluginTestMainTest1Stateful.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "NxPluginTestMainTest1Stateful": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://284588248117/eu-west-1",
+      "properties": {
+        "templateFile": "NxPluginTestMainTest1Stateful.template.json",
+        "terminationProtection": false,
+        "tags": {
+          "itw:stack:stateful": "true"
+        },
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::284588248117:role/cdk-hnb659fds-deploy-role-284588248117-eu-west-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::284588248117:role/cdk-hnb659fds-cfn-exec-role-284588248117-eu-west-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-284588248117-eu-west-1/ad56d4e89f8e44cd7ca700b655cf722d5c5bf451b2d67094b77b02e706b46baf.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "NxPluginTestMainTest1Stateful.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::284588248117:role/cdk-hnb659fds-lookup-role-284588248117-eu-west-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "NxPluginTestMainCore",
+        "NxPluginTestMainTest1Stateful.assets"
+      ],
+      "metadata": {
+        "/NxPluginTestMainTest1Stateful": [
+          {
+            "type": "aws:cdk:stack-tags",
+            "data": [
+              {
+                "Key": "itw:stack:stateful",
+                "Value": "true"
+              }
+            ]
+          }
+        ],
+        "/NxPluginTestMainTest1Stateful/SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SsmParameterValuenxplugintestmainenvironmenttypeC96584B6F00A464EAD1953AFF4B05118Parameter"
+          }
+        ],
+        "/NxPluginTestMainTest1Stateful/SsmParameterValue:--nx-plugin-test-main--removal-policy:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SsmParameterValuenxplugintestmainremovalpolicyC96584B6F00A464EAD1953AFF4B05118Parameter"
+          }
+        ],
+        "/NxPluginTestMainTest1Stateful/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/NxPluginTestMainTest1Stateful/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/NxPluginTestMainTest1Stateful/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "NxPluginTestMainTest1Stateful"
+    },
+    "NxPluginTestMainTest1.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "NxPluginTestMainTest1.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "NxPluginTestMainTest1": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://284588248117/eu-west-1",
+      "properties": {
+        "templateFile": "NxPluginTestMainTest1.template.json",
+        "terminationProtection": false,
+        "tags": {
+          "itw:stack:stateful": "false"
+        },
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::284588248117:role/cdk-hnb659fds-deploy-role-284588248117-eu-west-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::284588248117:role/cdk-hnb659fds-cfn-exec-role-284588248117-eu-west-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-284588248117-eu-west-1/5362030491d5e8235c23a7b317724ef618e7383f17485c08c6197cc1a5acad5e.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "NxPluginTestMainTest1.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::284588248117:role/cdk-hnb659fds-lookup-role-284588248117-eu-west-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "NxPluginTestMainCore",
+        "NxPluginTestMainTest1Stateful",
+        "NxPluginTestMainApiDomain",
+        "NxPluginTestMainTest1.assets"
+      ],
+      "metadata": {
+        "/NxPluginTestMainTest1": [
+          {
+            "type": "aws:cdk:stack-tags",
+            "data": [
+              {
+                "Key": "itw:stack:stateful",
+                "Value": "false"
+              }
+            ]
+          }
+        ],
+        "/NxPluginTestMainTest1/SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SsmParameterValuenxplugintestmainenvironmenttypeC96584B6F00A464EAD1953AFF4B05118Parameter"
+          }
+        ],
+        "/NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1ApiGatewayAccessLogs/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaynxplugintestmainRestApitest1ApiGatewayAccessLogs1DDE4FCB"
+          }
+        ],
+        "/NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaynxplugintestmainRestApitest15952EF37"
+          }
+        ],
+        "/NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaynxplugintestmainRestApitest1DeploymentD06C7FFD05aae6cabd5c7eb979c0b39649be9bef"
+          }
+        ],
+        "/NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/DeploymentStage.prod/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaynxplugintestmainRestApitest1DeploymentStageprodB39CBFA0"
+          }
+        ],
+        "/NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaynxplugintestmainRestApitest1Endpoint0FEC0BC8"
+          }
+        ],
+        "/NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/Default/OPTIONS/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaynxplugintestmainRestApitest1OPTIONS55B6907F"
+          }
+        ],
+        "/NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/Default/healthz/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaynxplugintestmainRestApitest1healthzB7A63D9B"
+          }
+        ],
+        "/NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/Default/healthz/OPTIONS/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaynxplugintestmainRestApitest1healthzOPTIONSFD464930"
+          }
+        ],
+        "/NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/Default/healthz/get/ApiPermission.NxPluginTestMainTest1ApiGatewaynxplugintestmainRestApitest14858B7FB.GET..healthz": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaynxplugintestmainRestApitest1healthzgetApiPermissionNxPluginTestMainTest1ApiGatewaynxplugintestmainRestApitest14858B7FBGEThealthz3C57DF33"
+          }
+        ],
+        "/NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/Default/healthz/get/ApiPermission.Test.NxPluginTestMainTest1ApiGatewaynxplugintestmainRestApitest14858B7FB.GET..healthz": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaynxplugintestmainRestApitest1healthzgetApiPermissionTestNxPluginTestMainTest1ApiGatewaynxplugintestmainRestApitest14858B7FBGEThealthz417521DF"
+          }
+        ],
+        "/NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/Default/healthz/get/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaynxplugintestmainRestApitest1healthzget7CC25BA3"
+          }
+        ],
+        "/NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1ApiBasePathMapping/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiGatewaynxplugintestmainRestApitest1ApiBasePathMappingA3A14663"
+          }
+        ],
+        "/NxPluginTestMainTest1/SsmParameterValue:--nx-plugin-test-main--log-level:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SsmParameterValuenxplugintestmainloglevelC96584B6F00A464EAD1953AFF4B05118Parameter"
+          }
+        ],
+        "/NxPluginTestMainTest1/SsmParameterValue:--nx-plugin-test-main--domain-name:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SsmParameterValuenxplugintestmaindomainnameC96584B6F00A464EAD1953AFF4B05118Parameter"
+          }
+        ],
+        "/NxPluginTestMainTest1/SsmParameterValue:--nx-plugin-test-main--log-retention-days:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SsmParameterValuenxplugintestmainlogretentiondaysC96584B6F00A464EAD1953AFF4B05118Parameter"
+          }
+        ],
+        "/NxPluginTestMainTest1/Lambda/LambdaRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaLambdaRole717D34FC"
+          }
+        ],
+        "/NxPluginTestMainTest1/Lambda/LambdaRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaLambdaRoleDefaultPolicy18AF8ABC"
+          }
+        ],
+        "/NxPluginTestMainTest1/Lambda/events--ping-pongLogGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaeventspingpongLogGroup61578A43"
+          }
+        ],
+        "/NxPluginTestMainTest1/Lambda/events--ping-pong/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Lambdaeventspingpong23FA50AF"
+          }
+        ],
+        "/NxPluginTestMainTest1/Lambda/GET--test1--healthzLogGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaGETtest1healthzLogGroupC054A80F"
+          }
+        ],
+        "/NxPluginTestMainTest1/Lambda/GET--test1--healthz/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaGETtest1healthz259F8738"
+          }
+        ],
+        "/NxPluginTestMainTest1/Event/events--ping-pong/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Eventeventspingpong70ABCAF5"
+          }
+        ],
+        "/NxPluginTestMainTest1/Event/events--ping-pong/AllowEventRuleNxPluginTestMainTest1LambdaeventspingpongC557782A": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EventeventspingpongAllowEventRuleNxPluginTestMainTest1LambdaeventspingpongC557782ACDE6C6CC"
+          }
+        ],
+        "/NxPluginTestMainTest1/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/NxPluginTestMainTest1/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/NxPluginTestMainTest1/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "NxPluginTestMainTest1"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}

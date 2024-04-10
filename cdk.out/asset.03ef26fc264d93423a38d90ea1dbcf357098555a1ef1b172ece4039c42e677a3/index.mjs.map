@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../apps/main/service-test1/cdk/src/apis/test1/healthz/get/handler.ts"],
+  "sourcesContent": ["export const handler = async () => {\n  return { statusCode: 200, body: JSON.stringify({ status: 'OK' }) };\n};\n"],
+  "mappings": ";;;;;AAAO,IAAM,UAAU,mCAAY;AACjC,SAAO,EAAE,YAAY,KAAK,MAAM,KAAK,UAAU,EAAE,QAAQ,KAAK,CAAC,EAAE;AACnE,GAFuB;",
+  "names": []
+}

@@ -1,0 +1,144 @@
+{
+ "Parameters": {
+  "SsmParameterValuenxplugintestmainenvironmenttypeC96584B6F00A464EAD1953AFF4B05118Parameter": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/nx-plugin-test-main/environment-type"
+  },
+  "SsmParameterValuenxplugintestmaindomainnameC96584B6F00A464EAD1953AFF4B05118Parameter": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/nx-plugin-test-main/domain-name"
+  },
+  "SsmParameterValuenxplugintestmainhostedzoneidC96584B6F00A464EAD1953AFF4B05118Parameter": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/nx-plugin-test-main/hosted-zone-id"
+  },
+  "SsmParameterValuenxplugintestmainhostedzonenameC96584B6F00A464EAD1953AFF4B05118Parameter": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/nx-plugin-test-main/hosted-zone-name"
+  },
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Resources": {
+  "ApiDomainNameEB571102": {
+   "Type": "AWS::ApiGateway::DomainName",
+   "Properties": {
+    "DomainName": {
+     "Fn::Join": [
+      "",
+      [
+       "api.",
+       {
+        "Ref": "SsmParameterValuenxplugintestmaindomainnameC96584B6F00A464EAD1953AFF4B05118Parameter"
+       }
+      ]
+     ]
+    },
+    "EndpointConfiguration": {
+     "Types": [
+      "REGIONAL"
+     ]
+    },
+    "RegionalCertificateArn": {
+     "Fn::ImportValue": "NxPluginTestMainRegionalCertificate:ExportsOutputRefWildcardCertificate25A2E830CD34CBD7"
+    },
+    "Tags": [
+     {
+      "Key": "itw:stack:stateful",
+      "Value": "false"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "NxPluginTestMainApiDomain/ApiDomainName/Resource"
+   }
+  },
+  "ApiDomainAliasRecord39245C52": {
+   "Type": "AWS::Route53::RecordSet",
+   "Properties": {
+    "AliasTarget": {
+     "DNSName": {
+      "Fn::GetAtt": [
+       "ApiDomainNameEB571102",
+       "RegionalDomainName"
+      ]
+     },
+     "HostedZoneId": {
+      "Fn::GetAtt": [
+       "ApiDomainNameEB571102",
+       "RegionalHostedZoneId"
+      ]
+     }
+    },
+    "HostedZoneId": {
+     "Ref": "SsmParameterValuenxplugintestmainhostedzoneidC96584B6F00A464EAD1953AFF4B05118Parameter"
+    },
+    "Name": {
+     "Fn::Join": [
+      "",
+      [
+       "api.",
+       {
+        "Ref": "SsmParameterValuenxplugintestmainhostedzonenameC96584B6F00A464EAD1953AFF4B05118Parameter"
+       },
+       "."
+      ]
+     ]
+    },
+    "Type": "A"
+   },
+   "Metadata": {
+    "aws:cdk:path": "NxPluginTestMainApiDomain/ApiDomainAliasRecord/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/0VOSwrCMBQ8i/v0aSOiW9G1SHoAeSZPSWsSycciIXc3JQtXM8N8GA4957BZ4Rw6qabupe+Qh4hyYqeHvaJHQ5E8ExRc8pJYDd4yvvUTI834hXx2BrW91NzS+KvCvEuRdlvIR0HSebX4jQ0US2myzRZmnSIYw/rTH6Df10dj0LrzyUZtCETDH4Qsy+muAAAA"
+   },
+   "Metadata": {
+    "aws:cdk:path": "NxPluginTestMainApiDomain/CDKMetadata/Default"
+   }
+  }
+ },
+ "Outputs": {
+  "ExportsOutputRefApiDomainNameEB571102DA4FDB49": {
+   "Value": {
+    "Ref": "ApiDomainNameEB571102"
+   },
+   "Export": {
+    "Name": "NxPluginTestMainApiDomain:ExportsOutputRefApiDomainNameEB571102DA4FDB49"
+   }
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

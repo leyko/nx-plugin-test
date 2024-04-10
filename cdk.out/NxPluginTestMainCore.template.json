@@ -1,0 +1,74 @@
+{
+ "Parameters": {
+  "SsmParameterValuenxplugintestmainenvironmenttypeC96584B6F00A464EAD1953AFF4B05118Parameter": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/nx-plugin-test-main/environment-type"
+  },
+  "SsmParameterValuenxplugintestmainremovalpolicyC96584B6F00A464EAD1953AFF4B05118Parameter": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/nx-plugin-test-main/removal-policy"
+  },
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Resources": {
+  "MainEventBus78A0DEF9": {
+   "Type": "AWS::Events::EventBus",
+   "Properties": {
+    "Name": "NxPluginTestMainCoreMainEventBus5C4FC44F"
+   },
+   "Metadata": {
+    "aws:cdk:path": "NxPluginTestMainCore/MainEventBus/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/zWNOwqAMBAFz2KfrCaN1oq96AEkxhXiJ0I20UK8uwaxmnkw8CQIKSFL1ElcjwtfzQBX55VeWDXZRjm1oUfHWqQ9OI3sDXs80HqCq44sA8X09zuOv76Z3UeEmdJDFCDy92gmY7gL1psNof34AB0u1o6FAAAA"
+   },
+   "Metadata": {
+    "aws:cdk:path": "NxPluginTestMainCore/CDKMetadata/Default"
+   }
+  }
+ },
+ "Outputs": {
+  "ExportsOutputRefMainEventBus78A0DEF9EB5CAD12": {
+   "Value": {
+    "Ref": "MainEventBus78A0DEF9"
+   },
+   "Export": {
+    "Name": "NxPluginTestMainCore:ExportsOutputRefMainEventBus78A0DEF9EB5CAD12"
+   }
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,20 @@
+{
+  "version": "36.0.0",
+  "files": {
+    "bb9d31166c52755914a07e7e1a18dd75c743b3909ec79da2e0641318e22d336a": {
+      "source": {
+        "path": "NxPluginTestMainGlobalCertificate.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "284588248117-us-east-1": {
+          "bucketName": "cdk-hnb659fds-assets-284588248117-us-east-1",
+          "objectKey": "bb9d31166c52755914a07e7e1a18dd75c743b3909ec79da2e0641318e22d336a.json",
+          "region": "us-east-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::284588248117:role/cdk-hnb659fds-file-publishing-role-284588248117-us-east-1"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

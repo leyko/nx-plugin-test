@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../apps/main/service-test1/cdk/src/events/ping-pong/handler.ts"],
+  "sourcesContent": ["export const handler = () => {\n  console.log('Ping event received. Pong!');\n};\n"],
+  "mappings": ";;;;;AAAO,IAAM,UAAU,6BAAM;AAC3B,UAAQ,IAAI,4BAA4B;AAC1C,GAFuB;",
+  "names": []
+}

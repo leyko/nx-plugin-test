@@ -1,0 +1,713 @@
+{
+ "Parameters": {
+  "SsmParameterValuenxplugintestmainenvironmenttypeC96584B6F00A464EAD1953AFF4B05118Parameter": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/nx-plugin-test-main/environment-type"
+  },
+  "SsmParameterValuenxplugintestmainloglevelC96584B6F00A464EAD1953AFF4B05118Parameter": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/nx-plugin-test-main/log-level"
+  },
+  "SsmParameterValuenxplugintestmaindomainnameC96584B6F00A464EAD1953AFF4B05118Parameter": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/nx-plugin-test-main/domain-name"
+  },
+  "SsmParameterValuenxplugintestmainlogretentiondaysC96584B6F00A464EAD1953AFF4B05118Parameter": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/nx-plugin-test-main/log-retention-days"
+  },
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Resources": {
+  "ApiGatewaynxplugintestmainRestApitest1ApiGatewayAccessLogs1DDE4FCB": {
+   "Type": "AWS::Logs::LogGroup",
+   "Properties": {
+    "RetentionInDays": 731,
+    "Tags": [
+     {
+      "Key": "itw:stack:stateful",
+      "Value": "false"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain",
+   "Metadata": {
+    "aws:cdk:path": "NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1ApiGatewayAccessLogs/Resource"
+   }
+  },
+  "ApiGatewaynxplugintestmainRestApitest15952EF37": {
+   "Type": "AWS::ApiGateway::RestApi",
+   "Properties": {
+    "Description": "/test1",
+    "DisableExecuteApiEndpoint": true,
+    "EndpointConfiguration": {
+     "Types": [
+      "REGIONAL"
+     ]
+    },
+    "Name": "nx-plugin-test-main_RestApi_test1",
+    "Tags": [
+     {
+      "Key": "itw:stack:stateful",
+      "Value": "false"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/Resource"
+   }
+  },
+  "ApiGatewaynxplugintestmainRestApitest1DeploymentD06C7FFD05aae6cabd5c7eb979c0b39649be9bef": {
+   "Type": "AWS::ApiGateway::Deployment",
+   "Properties": {
+    "Description": "/test1",
+    "RestApiId": {
+     "Ref": "ApiGatewaynxplugintestmainRestApitest15952EF37"
+    }
+   },
+   "DependsOn": [
+    "ApiGatewaynxplugintestmainRestApitest1healthzget7CC25BA3",
+    "ApiGatewaynxplugintestmainRestApitest1healthzOPTIONSFD464930",
+    "ApiGatewaynxplugintestmainRestApitest1healthzB7A63D9B",
+    "ApiGatewaynxplugintestmainRestApitest1OPTIONS55B6907F"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/Deployment/Resource"
+   }
+  },
+  "ApiGatewaynxplugintestmainRestApitest1DeploymentStageprodB39CBFA0": {
+   "Type": "AWS::ApiGateway::Stage",
+   "Properties": {
+    "AccessLogSetting": {
+     "DestinationArn": {
+      "Fn::GetAtt": [
+       "ApiGatewaynxplugintestmainRestApitest1ApiGatewayAccessLogs1DDE4FCB",
+       "Arn"
+      ]
+     },
+     "Format": "{\"requestId\":\"$context.requestId\",\"ip\":\"$context.identity.sourceIp\",\"user\":\"$context.identity.user\",\"caller\":\"$context.identity.caller\",\"requestTime\":\"$context.requestTime\",\"httpMethod\":\"$context.httpMethod\",\"resourcePath\":\"$context.resourcePath\",\"status\":\"$context.status\",\"protocol\":\"$context.protocol\",\"responseLength\":\"$context.responseLength\"}"
+    },
+    "DeploymentId": {
+     "Ref": "ApiGatewaynxplugintestmainRestApitest1DeploymentD06C7FFD05aae6cabd5c7eb979c0b39649be9bef"
+    },
+    "MethodSettings": [
+     {
+      "DataTraceEnabled": true,
+      "HttpMethod": "*",
+      "LoggingLevel": "INFO",
+      "MetricsEnabled": false,
+      "ResourcePath": "/*"
+     }
+    ],
+    "RestApiId": {
+     "Ref": "ApiGatewaynxplugintestmainRestApitest15952EF37"
+    },
+    "StageName": "prod",
+    "Tags": [
+     {
+      "Key": "itw:stack:stateful",
+      "Value": "false"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/DeploymentStage.prod/Resource"
+   }
+  },
+  "ApiGatewaynxplugintestmainRestApitest1OPTIONS55B6907F": {
+   "Type": "AWS::ApiGateway::Method",
+   "Properties": {
+    "ApiKeyRequired": false,
+    "AuthorizationType": "NONE",
+    "HttpMethod": "OPTIONS",
+    "Integration": {
+     "IntegrationResponses": [
+      {
+       "ResponseParameters": {
+        "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+        "method.response.header.Access-Control-Allow-Origin": "'*'",
+        "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'",
+        "method.response.header.Access-Control-Allow-Credentials": "'true'"
+       },
+       "StatusCode": "204"
+      }
+     ],
+     "RequestTemplates": {
+      "application/json": "{ statusCode: 200 }"
+     },
+     "Type": "MOCK"
+    },
+    "MethodResponses": [
+     {
+      "ResponseParameters": {
+       "method.response.header.Access-Control-Allow-Headers": true,
+       "method.response.header.Access-Control-Allow-Origin": true,
+       "method.response.header.Access-Control-Allow-Methods": true,
+       "method.response.header.Access-Control-Allow-Credentials": true
+      },
+      "StatusCode": "204"
+     }
+    ],
+    "ResourceId": {
+     "Fn::GetAtt": [
+      "ApiGatewaynxplugintestmainRestApitest15952EF37",
+      "RootResourceId"
+     ]
+    },
+    "RestApiId": {
+     "Ref": "ApiGatewaynxplugintestmainRestApitest15952EF37"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/Default/OPTIONS/Resource"
+   }
+  },
+  "ApiGatewaynxplugintestmainRestApitest1healthzB7A63D9B": {
+   "Type": "AWS::ApiGateway::Resource",
+   "Properties": {
+    "ParentId": {
+     "Fn::GetAtt": [
+      "ApiGatewaynxplugintestmainRestApitest15952EF37",
+      "RootResourceId"
+     ]
+    },
+    "PathPart": "healthz",
+    "RestApiId": {
+     "Ref": "ApiGatewaynxplugintestmainRestApitest15952EF37"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/Default/healthz/Resource"
+   }
+  },
+  "ApiGatewaynxplugintestmainRestApitest1healthzOPTIONSFD464930": {
+   "Type": "AWS::ApiGateway::Method",
+   "Properties": {
+    "ApiKeyRequired": false,
+    "AuthorizationType": "NONE",
+    "HttpMethod": "OPTIONS",
+    "Integration": {
+     "IntegrationResponses": [
+      {
+       "ResponseParameters": {
+        "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+        "method.response.header.Access-Control-Allow-Origin": "'*'",
+        "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'",
+        "method.response.header.Access-Control-Allow-Credentials": "'true'"
+       },
+       "StatusCode": "204"
+      }
+     ],
+     "RequestTemplates": {
+      "application/json": "{ statusCode: 200 }"
+     },
+     "Type": "MOCK"
+    },
+    "MethodResponses": [
+     {
+      "ResponseParameters": {
+       "method.response.header.Access-Control-Allow-Headers": true,
+       "method.response.header.Access-Control-Allow-Origin": true,
+       "method.response.header.Access-Control-Allow-Methods": true,
+       "method.response.header.Access-Control-Allow-Credentials": true
+      },
+      "StatusCode": "204"
+     }
+    ],
+    "ResourceId": {
+     "Ref": "ApiGatewaynxplugintestmainRestApitest1healthzB7A63D9B"
+    },
+    "RestApiId": {
+     "Ref": "ApiGatewaynxplugintestmainRestApitest15952EF37"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/Default/healthz/OPTIONS/Resource"
+   }
+  },
+  "ApiGatewaynxplugintestmainRestApitest1healthzgetApiPermissionNxPluginTestMainTest1ApiGatewaynxplugintestmainRestApitest14858B7FBGEThealthz3C57DF33": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "LambdaGETtest1healthz259F8738",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:aws:execute-api:eu-west-1:284588248117:",
+       {
+        "Ref": "ApiGatewaynxplugintestmainRestApitest15952EF37"
+       },
+       "/",
+       {
+        "Ref": "ApiGatewaynxplugintestmainRestApitest1DeploymentStageprodB39CBFA0"
+       },
+       "/GET/healthz"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/Default/healthz/get/ApiPermission.NxPluginTestMainTest1ApiGatewaynxplugintestmainRestApitest14858B7FB.GET..healthz"
+   }
+  },
+  "ApiGatewaynxplugintestmainRestApitest1healthzgetApiPermissionTestNxPluginTestMainTest1ApiGatewaynxplugintestmainRestApitest14858B7FBGEThealthz417521DF": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "LambdaGETtest1healthz259F8738",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:aws:execute-api:eu-west-1:284588248117:",
+       {
+        "Ref": "ApiGatewaynxplugintestmainRestApitest15952EF37"
+       },
+       "/test-invoke-stage/GET/healthz"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/Default/healthz/get/ApiPermission.Test.NxPluginTestMainTest1ApiGatewaynxplugintestmainRestApitest14858B7FB.GET..healthz"
+   }
+  },
+  "ApiGatewaynxplugintestmainRestApitest1healthzget7CC25BA3": {
+   "Type": "AWS::ApiGateway::Method",
+   "Properties": {
+    "AuthorizationType": "NONE",
+    "HttpMethod": "GET",
+    "Integration": {
+     "IntegrationHttpMethod": "POST",
+     "Type": "AWS_PROXY",
+     "Uri": {
+      "Fn::Join": [
+       "",
+       [
+        "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/",
+        {
+         "Fn::GetAtt": [
+          "LambdaGETtest1healthz259F8738",
+          "Arn"
+         ]
+        },
+        "/invocations"
+       ]
+      ]
+     }
+    },
+    "ResourceId": {
+     "Ref": "ApiGatewaynxplugintestmainRestApitest1healthzB7A63D9B"
+    },
+    "RestApiId": {
+     "Ref": "ApiGatewaynxplugintestmainRestApitest15952EF37"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/Default/healthz/get/Resource"
+   }
+  },
+  "ApiGatewaynxplugintestmainRestApitest1ApiBasePathMappingA3A14663": {
+   "Type": "AWS::ApiGateway::BasePathMapping",
+   "Properties": {
+    "BasePath": "test1",
+    "DomainName": {
+     "Fn::ImportValue": "NxPluginTestMainApiDomain:ExportsOutputRefApiDomainNameEB571102DA4FDB49"
+    },
+    "RestApiId": {
+     "Ref": "ApiGatewaynxplugintestmainRestApitest15952EF37"
+    },
+    "Stage": {
+     "Ref": "ApiGatewaynxplugintestmainRestApitest1DeploymentStageprodB39CBFA0"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1ApiBasePathMapping/Resource"
+   }
+  },
+  "LambdaLambdaRole717D34FC": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+    ],
+    "MaxSessionDuration": 3600,
+    "Tags": [
+     {
+      "Key": "itw:stack:stateful",
+      "Value": "false"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "NxPluginTestMainTest1/Lambda/LambdaRole/Resource"
+   }
+  },
+  "LambdaLambdaRoleDefaultPolicy18AF8ABC": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "xray:PutTelemetryRecords",
+        "xray:PutTraceSegments"
+       ],
+       "Effect": "Allow",
+       "Resource": "*"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "LambdaLambdaRoleDefaultPolicy18AF8ABC",
+    "Roles": [
+     {
+      "Ref": "LambdaLambdaRole717D34FC"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "NxPluginTestMainTest1/Lambda/LambdaRole/DefaultPolicy/Resource"
+   }
+  },
+  "LambdaeventspingpongLogGroup61578A43": {
+   "Type": "AWS::Logs::LogGroup",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "itw:stack:stateful",
+      "Value": "false"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain",
+   "Metadata": {
+    "aws:cdk:path": "NxPluginTestMainTest1/Lambda/events--ping-pongLogGroup/Resource"
+   }
+  },
+  "Lambdaeventspingpong23FA50AF": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-284588248117-eu-west-1",
+     "S3Key": "803d7e662b3bbe01c4a5399d99f8af4a1f141bf8d4a9ba6ed018b74838841920.zip"
+    },
+    "Description": "events/ping-pong",
+    "Environment": {
+     "Variables": {
+      "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
+      "NODE_ENV": {
+       "Ref": "SsmParameterValuenxplugintestmainenvironmenttypeC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "NODE_OPTIONS": "--enable-source-maps",
+      "LOG_LEVEL": {
+       "Ref": "SsmParameterValuenxplugintestmainloglevelC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "DOMAIN_NAME": {
+       "Ref": "SsmParameterValuenxplugintestmaindomainnameC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "MAIN_EVENT_BUS_NAME": {
+       "Fn::ImportValue": "NxPluginTestMainCore:ExportsOutputRefMainEventBus78A0DEF9EB5CAD12"
+      },
+      "POWERTOOLS_METRICS_NAMESPACE": "94]}.${Token[TOKEN",
+      "POWERTOOLS_TRACE_ENABLED": "true",
+      "POWERTOOLS_TRACER_CAPTURE_RESPONSE": "true",
+      "POWERTOOLS_TRACER_CAPTURE_ERROR": "true",
+      "POWERTOOLS_TRACER_CAPTURE_HTTPS_REQUESTS": "true",
+      "POWERTOOLS_LOGGER_LOG_EVENT": "false",
+      "POWERTOOLS_LOGGER_SAMPLE_RATE": "0",
+      "POWERTOOLS_DEV": "false",
+      "POWERTOOLS_PARAMETERS_MAX_AGE": "5",
+      "POWERTOOLS_PARAMETERS_SSM_DECRYPT": "false",
+      "ITW_VERSION": "0.0.20"
+     }
+    },
+    "Handler": "index.handler",
+    "LoggingConfig": {
+     "LogGroup": {
+      "Ref": "LambdaeventspingpongLogGroup61578A43"
+     }
+    },
+    "MemorySize": 512,
+    "Role": {
+     "Fn::GetAtt": [
+      "LambdaLambdaRole717D34FC",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs18.x",
+    "Tags": [
+     {
+      "Key": "itw:event:type",
+      "Value": "event-pattern"
+     },
+     {
+      "Key": "itw:lambda:from",
+      "Value": "events"
+     },
+     {
+      "Key": "itw:sqs:throttling",
+      "Value": "false"
+     },
+     {
+      "Key": "itw:stack:stateful",
+      "Value": "false"
+     }
+    ],
+    "Timeout": 30,
+    "TracingConfig": {
+     "Mode": "Active"
+    }
+   },
+   "DependsOn": [
+    "LambdaLambdaRoleDefaultPolicy18AF8ABC",
+    "LambdaLambdaRole717D34FC"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "NxPluginTestMainTest1/Lambda/events--ping-pong/Resource",
+    "aws:asset:path": "asset.803d7e662b3bbe01c4a5399d99f8af4a1f141bf8d4a9ba6ed018b74838841920",
+    "aws:asset:is-bundled": true,
+    "aws:asset:property": "Code"
+   }
+  },
+  "LambdaGETtest1healthzLogGroupC054A80F": {
+   "Type": "AWS::Logs::LogGroup",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "itw:stack:stateful",
+      "Value": "false"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain",
+   "Metadata": {
+    "aws:cdk:path": "NxPluginTestMainTest1/Lambda/GET--test1--healthzLogGroup/Resource"
+   }
+  },
+  "LambdaGETtest1healthz259F8738": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-284588248117-eu-west-1",
+     "S3Key": "03ef26fc264d93423a38d90ea1dbcf357098555a1ef1b172ece4039c42e677a3.zip"
+    },
+    "Description": "GET /test1/healthz",
+    "Environment": {
+     "Variables": {
+      "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
+      "NODE_ENV": {
+       "Ref": "SsmParameterValuenxplugintestmainenvironmenttypeC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "NODE_OPTIONS": "--enable-source-maps",
+      "LOG_LEVEL": {
+       "Ref": "SsmParameterValuenxplugintestmainloglevelC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "DOMAIN_NAME": {
+       "Ref": "SsmParameterValuenxplugintestmaindomainnameC96584B6F00A464EAD1953AFF4B05118Parameter"
+      },
+      "MAIN_EVENT_BUS_NAME": {
+       "Fn::ImportValue": "NxPluginTestMainCore:ExportsOutputRefMainEventBus78A0DEF9EB5CAD12"
+      },
+      "POWERTOOLS_METRICS_NAMESPACE": "94]}.${Token[TOKEN",
+      "POWERTOOLS_TRACE_ENABLED": "true",
+      "POWERTOOLS_TRACER_CAPTURE_RESPONSE": "true",
+      "POWERTOOLS_TRACER_CAPTURE_ERROR": "true",
+      "POWERTOOLS_TRACER_CAPTURE_HTTPS_REQUESTS": "true",
+      "POWERTOOLS_LOGGER_LOG_EVENT": "false",
+      "POWERTOOLS_LOGGER_SAMPLE_RATE": "0",
+      "POWERTOOLS_DEV": "false",
+      "POWERTOOLS_PARAMETERS_MAX_AGE": "5",
+      "POWERTOOLS_PARAMETERS_SSM_DECRYPT": "false",
+      "ITW_VERSION": "0.0.20"
+     }
+    },
+    "Handler": "index.handler",
+    "LoggingConfig": {
+     "LogGroup": {
+      "Ref": "LambdaGETtest1healthzLogGroupC054A80F"
+     }
+    },
+    "MemorySize": 512,
+    "Role": {
+     "Fn::GetAtt": [
+      "LambdaLambdaRole717D34FC",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs18.x",
+    "Tags": [
+     {
+      "Key": "itw:lambda:from",
+      "Value": "apis"
+     },
+     {
+      "Key": "itw:stack:stateful",
+      "Value": "false"
+     }
+    ],
+    "Timeout": 30,
+    "TracingConfig": {
+     "Mode": "Active"
+    }
+   },
+   "DependsOn": [
+    "LambdaLambdaRoleDefaultPolicy18AF8ABC",
+    "LambdaLambdaRole717D34FC"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "NxPluginTestMainTest1/Lambda/GET--test1--healthz/Resource",
+    "aws:asset:path": "asset.03ef26fc264d93423a38d90ea1dbcf357098555a1ef1b172ece4039c42e677a3",
+    "aws:asset:is-bundled": true,
+    "aws:asset:property": "Code"
+   }
+  },
+  "Eventeventspingpong70ABCAF5": {
+   "Type": "AWS::Events::Rule",
+   "Properties": {
+    "EventBusName": {
+     "Fn::ImportValue": "NxPluginTestMainCore:ExportsOutputRefMainEventBus78A0DEF9EB5CAD12"
+    },
+    "EventPattern": {
+     "detail-type": [
+      {
+       "suffix": ".Ping"
+      }
+     ],
+     "source": [
+      "94]}.${Token[TOKEN"
+     ]
+    },
+    "State": "ENABLED",
+    "Targets": [
+     {
+      "Arn": {
+       "Fn::GetAtt": [
+        "Lambdaeventspingpong23FA50AF",
+        "Arn"
+       ]
+      },
+      "Id": "Target0"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "NxPluginTestMainTest1/Event/events--ping-pong/Resource"
+   }
+  },
+  "EventeventspingpongAllowEventRuleNxPluginTestMainTest1LambdaeventspingpongC557782ACDE6C6CC": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "Lambdaeventspingpong23FA50AF",
+      "Arn"
+     ]
+    },
+    "Principal": "events.amazonaws.com",
+    "SourceArn": {
+     "Fn::GetAtt": [
+      "Eventeventspingpong70ABCAF5",
+      "Arn"
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "NxPluginTestMainTest1/Event/events--ping-pong/AllowEventRuleNxPluginTestMainTest1LambdaeventspingpongC557782A"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/11RTU/DMAz9LdyzwMoBrhtoXBhU5QdUXmu69COJamdTVfW/E7crQpzes/1i+zmJ3iaJfriDK22Kstm05qTHL4aiUS/fNoUeOmTsVYbkQl+gisJ8bF1Fenx31VvvghflyicF3lTAeIVBj/EV77wRwUpf0bdu6NCyZP9EcWiFklvIOnAPhOqIfHalFG/sd52l88JFmgKfj+C9sZXU/qUm1UJ3KkGPYg77zhAZZ0V5CLbgyCdloIubu3ZpLpi61hTDfJCZrW1y60qsSX/MsHZQ9JgDETLpnUCM9T4UDfLsBS/RbbxeFm4TIk6TsM/APrCaH8kRbh5Wf5OScbqm+8v2WW+f4q/VZMymD5ZNhzpb8AdQ+PZL0gEAAA=="
+   },
+   "Metadata": {
+    "aws:cdk:path": "NxPluginTestMainTest1/CDKMetadata/Default"
+   }
+  }
+ },
+ "Outputs": {
+  "ApiGatewaynxplugintestmainRestApitest1Endpoint0FEC0BC8": {
+   "Value": {
+    "Fn::Join": [
+     "",
+     [
+      "https://",
+      {
+       "Ref": "ApiGatewaynxplugintestmainRestApitest15952EF37"
+      },
+      ".execute-api.eu-west-1.",
+      {
+       "Ref": "AWS::URLSuffix"
+      },
+      "/",
+      {
+       "Ref": "ApiGatewaynxplugintestmainRestApitest1DeploymentStageprodB39CBFA0"
+      },
+      "/"
+     ]
+    ]
+   }
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

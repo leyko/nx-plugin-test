@@ -1,0 +1,1907 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "NxPluginTestMainCore": {
+        "id": "NxPluginTestMainCore",
+        "path": "NxPluginTestMainCore",
+        "children": {
+          "SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "path": "NxPluginTestMainCore/SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.122.0"
+            }
+          },
+          "SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "path": "NxPluginTestMainCore/SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.122.0"
+            }
+          },
+          "SsmParameterValue:--nx-plugin-test-main--removal-policy:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--removal-policy:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "path": "NxPluginTestMainCore/SsmParameterValue:--nx-plugin-test-main--removal-policy:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.122.0"
+            }
+          },
+          "SsmParameterValue:--nx-plugin-test-main--removal-policy:C96584B6-F00A-464E-AD19-53AFF4B05118": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--removal-policy:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "path": "NxPluginTestMainCore/SsmParameterValue:--nx-plugin-test-main--removal-policy:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.122.0"
+            }
+          },
+          "MainEventBus": {
+            "id": "MainEventBus",
+            "path": "NxPluginTestMainCore/MainEventBus",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "NxPluginTestMainCore/MainEventBus/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Events::EventBus",
+                  "aws:cdk:cloudformation:props": {
+                    "name": "NxPluginTestMainCoreMainEventBus5C4FC44F"
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_events.CfnEventBus",
+                  "version": "2.122.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_events.EventBus",
+              "version": "2.122.0"
+            }
+          },
+          "Cognito": {
+            "id": "Cognito",
+            "path": "NxPluginTestMainCore/Cognito",
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.3.0"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "NxPluginTestMainCore/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "NxPluginTestMainCore/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.122.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.3.0"
+            }
+          },
+          "Exports": {
+            "id": "Exports",
+            "path": "NxPluginTestMainCore/Exports",
+            "children": {
+              "Output{\"Ref\":\"MainEventBus78A0DEF9\"}": {
+                "id": "Output{\"Ref\":\"MainEventBus78A0DEF9\"}",
+                "path": "NxPluginTestMainCore/Exports/Output{\"Ref\":\"MainEventBus78A0DEF9\"}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.122.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.3.0"
+            }
+          },
+          "BootstrapVersion": {
+            "id": "BootstrapVersion",
+            "path": "NxPluginTestMainCore/BootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.122.0"
+            }
+          },
+          "CheckBootstrapVersion": {
+            "id": "CheckBootstrapVersion",
+            "path": "NxPluginTestMainCore/CheckBootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnRule",
+              "version": "2.122.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "aws-cdk-lib.Stack",
+          "version": "2.122.0"
+        }
+      },
+      "NxPluginTestMainGlobalCertificate": {
+        "id": "NxPluginTestMainGlobalCertificate",
+        "path": "NxPluginTestMainGlobalCertificate",
+        "children": {
+          "SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "path": "NxPluginTestMainGlobalCertificate/SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.122.0"
+            }
+          },
+          "SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "path": "NxPluginTestMainGlobalCertificate/SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.122.0"
+            }
+          },
+          "SsmParameterValue:--nx-plugin-test-main--domain-name:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--domain-name:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "path": "NxPluginTestMainGlobalCertificate/SsmParameterValue:--nx-plugin-test-main--domain-name:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.122.0"
+            }
+          },
+          "SsmParameterValue:--nx-plugin-test-main--domain-name:C96584B6-F00A-464E-AD19-53AFF4B05118": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--domain-name:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "path": "NxPluginTestMainGlobalCertificate/SsmParameterValue:--nx-plugin-test-main--domain-name:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.122.0"
+            }
+          },
+          "SsmParameterValue:--nx-plugin-test-main--hosted-zone-id:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--hosted-zone-id:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "path": "NxPluginTestMainGlobalCertificate/SsmParameterValue:--nx-plugin-test-main--hosted-zone-id:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.122.0"
+            }
+          },
+          "SsmParameterValue:--nx-plugin-test-main--hosted-zone-id:C96584B6-F00A-464E-AD19-53AFF4B05118": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--hosted-zone-id:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "path": "NxPluginTestMainGlobalCertificate/SsmParameterValue:--nx-plugin-test-main--hosted-zone-id:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.122.0"
+            }
+          },
+          "HostedZone": {
+            "id": "HostedZone",
+            "path": "NxPluginTestMainGlobalCertificate/HostedZone",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.122.0"
+            }
+          },
+          "WildcardCertificate": {
+            "id": "WildcardCertificate",
+            "path": "NxPluginTestMainGlobalCertificate/WildcardCertificate",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "NxPluginTestMainGlobalCertificate/WildcardCertificate/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::CertificateManager::Certificate",
+                  "aws:cdk:cloudformation:props": {
+                    "domainName": {
+                      "Ref": "SsmParameterValuenxplugintestmaindomainnameC96584B6F00A464EAD1953AFF4B05118Parameter"
+                    },
+                    "domainValidationOptions": [
+                      {
+                        "domainName": {
+                          "Ref": "SsmParameterValuenxplugintestmaindomainnameC96584B6F00A464EAD1953AFF4B05118Parameter"
+                        },
+                        "hostedZoneId": {
+                          "Ref": "SsmParameterValuenxplugintestmainhostedzoneidC96584B6F00A464EAD1953AFF4B05118Parameter"
+                        }
+                      }
+                    ],
+                    "subjectAlternativeNames": [
+                      {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "*.",
+                            {
+                              "Ref": "SsmParameterValuenxplugintestmaindomainnameC96584B6F00A464EAD1953AFF4B05118Parameter"
+                            }
+                          ]
+                        ]
+                      }
+                    ],
+                    "tags": [
+                      {
+                        "key": "itw:stack:stateful",
+                        "value": "false"
+                      },
+                      {
+                        "key": "Name",
+                        "value": "NxPluginTestMainGlobalCertificate/WildcardCertificate"
+                      }
+                    ],
+                    "validationMethod": "DNS"
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_certificatemanager.CfnCertificate",
+                  "version": "2.122.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_certificatemanager.Certificate",
+              "version": "2.122.0"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "NxPluginTestMainGlobalCertificate/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "NxPluginTestMainGlobalCertificate/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.122.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.3.0"
+            }
+          },
+          "BootstrapVersion": {
+            "id": "BootstrapVersion",
+            "path": "NxPluginTestMainGlobalCertificate/BootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.122.0"
+            }
+          },
+          "CheckBootstrapVersion": {
+            "id": "CheckBootstrapVersion",
+            "path": "NxPluginTestMainGlobalCertificate/CheckBootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnRule",
+              "version": "2.122.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "aws-cdk-lib.Stack",
+          "version": "2.122.0"
+        }
+      },
+      "NxPluginTestMainRegionalCertificate": {
+        "id": "NxPluginTestMainRegionalCertificate",
+        "path": "NxPluginTestMainRegionalCertificate",
+        "children": {
+          "SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "path": "NxPluginTestMainRegionalCertificate/SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.122.0"
+            }
+          },
+          "SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "path": "NxPluginTestMainRegionalCertificate/SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.122.0"
+            }
+          },
+          "SsmParameterValue:--nx-plugin-test-main--domain-name:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--domain-name:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "path": "NxPluginTestMainRegionalCertificate/SsmParameterValue:--nx-plugin-test-main--domain-name:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.122.0"
+            }
+          },
+          "SsmParameterValue:--nx-plugin-test-main--domain-name:C96584B6-F00A-464E-AD19-53AFF4B05118": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--domain-name:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "path": "NxPluginTestMainRegionalCertificate/SsmParameterValue:--nx-plugin-test-main--domain-name:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.122.0"
+            }
+          },
+          "SsmParameterValue:--nx-plugin-test-main--hosted-zone-id:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--hosted-zone-id:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "path": "NxPluginTestMainRegionalCertificate/SsmParameterValue:--nx-plugin-test-main--hosted-zone-id:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.122.0"
+            }
+          },
+          "SsmParameterValue:--nx-plugin-test-main--hosted-zone-id:C96584B6-F00A-464E-AD19-53AFF4B05118": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--hosted-zone-id:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "path": "NxPluginTestMainRegionalCertificate/SsmParameterValue:--nx-plugin-test-main--hosted-zone-id:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.122.0"
+            }
+          },
+          "HostedZone": {
+            "id": "HostedZone",
+            "path": "NxPluginTestMainRegionalCertificate/HostedZone",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.122.0"
+            }
+          },
+          "WildcardCertificate": {
+            "id": "WildcardCertificate",
+            "path": "NxPluginTestMainRegionalCertificate/WildcardCertificate",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "NxPluginTestMainRegionalCertificate/WildcardCertificate/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::CertificateManager::Certificate",
+                  "aws:cdk:cloudformation:props": {
+                    "domainName": {
+                      "Ref": "SsmParameterValuenxplugintestmaindomainnameC96584B6F00A464EAD1953AFF4B05118Parameter"
+                    },
+                    "domainValidationOptions": [
+                      {
+                        "domainName": {
+                          "Ref": "SsmParameterValuenxplugintestmaindomainnameC96584B6F00A464EAD1953AFF4B05118Parameter"
+                        },
+                        "hostedZoneId": {
+                          "Ref": "SsmParameterValuenxplugintestmainhostedzoneidC96584B6F00A464EAD1953AFF4B05118Parameter"
+                        }
+                      }
+                    ],
+                    "subjectAlternativeNames": [
+                      {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "*.",
+                            {
+                              "Ref": "SsmParameterValuenxplugintestmaindomainnameC96584B6F00A464EAD1953AFF4B05118Parameter"
+                            }
+                          ]
+                        ]
+                      }
+                    ],
+                    "tags": [
+                      {
+                        "key": "itw:stack:stateful",
+                        "value": "false"
+                      },
+                      {
+                        "key": "Name",
+                        "value": "NxPluginTestMainRegionalCertificate/WildcardCertificate"
+                      }
+                    ],
+                    "validationMethod": "DNS"
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_certificatemanager.CfnCertificate",
+                  "version": "2.122.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_certificatemanager.Certificate",
+              "version": "2.122.0"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "NxPluginTestMainRegionalCertificate/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "NxPluginTestMainRegionalCertificate/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.122.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.3.0"
+            }
+          },
+          "Exports": {
+            "id": "Exports",
+            "path": "NxPluginTestMainRegionalCertificate/Exports",
+            "children": {
+              "Output{\"Ref\":\"WildcardCertificate25A2E830\"}": {
+                "id": "Output{\"Ref\":\"WildcardCertificate25A2E830\"}",
+                "path": "NxPluginTestMainRegionalCertificate/Exports/Output{\"Ref\":\"WildcardCertificate25A2E830\"}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.122.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.3.0"
+            }
+          },
+          "BootstrapVersion": {
+            "id": "BootstrapVersion",
+            "path": "NxPluginTestMainRegionalCertificate/BootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.122.0"
+            }
+          },
+          "CheckBootstrapVersion": {
+            "id": "CheckBootstrapVersion",
+            "path": "NxPluginTestMainRegionalCertificate/CheckBootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnRule",
+              "version": "2.122.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "aws-cdk-lib.Stack",
+          "version": "2.122.0"
+        }
+      },
+      "NxPluginTestMainApiDomain": {
+        "id": "NxPluginTestMainApiDomain",
+        "path": "NxPluginTestMainApiDomain",
+        "children": {
+          "SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "path": "NxPluginTestMainApiDomain/SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.122.0"
+            }
+          },
+          "SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "path": "NxPluginTestMainApiDomain/SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.122.0"
+            }
+          },
+          "SsmParameterValue:--nx-plugin-test-main--domain-name:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--domain-name:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "path": "NxPluginTestMainApiDomain/SsmParameterValue:--nx-plugin-test-main--domain-name:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.122.0"
+            }
+          },
+          "SsmParameterValue:--nx-plugin-test-main--domain-name:C96584B6-F00A-464E-AD19-53AFF4B05118": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--domain-name:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "path": "NxPluginTestMainApiDomain/SsmParameterValue:--nx-plugin-test-main--domain-name:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.122.0"
+            }
+          },
+          "ApiDomainName": {
+            "id": "ApiDomainName",
+            "path": "NxPluginTestMainApiDomain/ApiDomainName",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "NxPluginTestMainApiDomain/ApiDomainName/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ApiGateway::DomainName",
+                  "aws:cdk:cloudformation:props": {
+                    "domainName": {
+                      "Fn::Join": [
+                        "",
+                        [
+                          "api.",
+                          {
+                            "Ref": "SsmParameterValuenxplugintestmaindomainnameC96584B6F00A464EAD1953AFF4B05118Parameter"
+                          }
+                        ]
+                      ]
+                    },
+                    "endpointConfiguration": {
+                      "types": [
+                        "REGIONAL"
+                      ]
+                    },
+                    "regionalCertificateArn": {
+                      "Fn::ImportValue": "NxPluginTestMainRegionalCertificate:ExportsOutputRefWildcardCertificate25A2E830CD34CBD7"
+                    },
+                    "tags": [
+                      {
+                        "key": "itw:stack:stateful",
+                        "value": "false"
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_apigateway.CfnDomainName",
+                  "version": "2.122.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_apigateway.DomainName",
+              "version": "2.122.0"
+            }
+          },
+          "SsmParameterValue:--nx-plugin-test-main--hosted-zone-id:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--hosted-zone-id:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "path": "NxPluginTestMainApiDomain/SsmParameterValue:--nx-plugin-test-main--hosted-zone-id:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.122.0"
+            }
+          },
+          "SsmParameterValue:--nx-plugin-test-main--hosted-zone-id:C96584B6-F00A-464E-AD19-53AFF4B05118": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--hosted-zone-id:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "path": "NxPluginTestMainApiDomain/SsmParameterValue:--nx-plugin-test-main--hosted-zone-id:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.122.0"
+            }
+          },
+          "SsmParameterValue:--nx-plugin-test-main--hosted-zone-name:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--hosted-zone-name:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "path": "NxPluginTestMainApiDomain/SsmParameterValue:--nx-plugin-test-main--hosted-zone-name:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.122.0"
+            }
+          },
+          "SsmParameterValue:--nx-plugin-test-main--hosted-zone-name:C96584B6-F00A-464E-AD19-53AFF4B05118": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--hosted-zone-name:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "path": "NxPluginTestMainApiDomain/SsmParameterValue:--nx-plugin-test-main--hosted-zone-name:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.122.0"
+            }
+          },
+          "HostedZone": {
+            "id": "HostedZone",
+            "path": "NxPluginTestMainApiDomain/HostedZone",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.122.0"
+            }
+          },
+          "ApiDomainAliasRecord": {
+            "id": "ApiDomainAliasRecord",
+            "path": "NxPluginTestMainApiDomain/ApiDomainAliasRecord",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "NxPluginTestMainApiDomain/ApiDomainAliasRecord/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Route53::RecordSet",
+                  "aws:cdk:cloudformation:props": {
+                    "aliasTarget": {
+                      "dnsName": {
+                        "Fn::GetAtt": [
+                          "ApiDomainNameEB571102",
+                          "RegionalDomainName"
+                        ]
+                      },
+                      "hostedZoneId": {
+                        "Fn::GetAtt": [
+                          "ApiDomainNameEB571102",
+                          "RegionalHostedZoneId"
+                        ]
+                      }
+                    },
+                    "hostedZoneId": {
+                      "Ref": "SsmParameterValuenxplugintestmainhostedzoneidC96584B6F00A464EAD1953AFF4B05118Parameter"
+                    },
+                    "name": {
+                      "Fn::Join": [
+                        "",
+                        [
+                          "api.",
+                          {
+                            "Ref": "SsmParameterValuenxplugintestmainhostedzonenameC96584B6F00A464EAD1953AFF4B05118Parameter"
+                          },
+                          "."
+                        ]
+                      ]
+                    },
+                    "type": "A"
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_route53.CfnRecordSet",
+                  "version": "2.122.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_route53.ARecord",
+              "version": "2.122.0"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "NxPluginTestMainApiDomain/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "NxPluginTestMainApiDomain/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.122.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.3.0"
+            }
+          },
+          "Exports": {
+            "id": "Exports",
+            "path": "NxPluginTestMainApiDomain/Exports",
+            "children": {
+              "Output{\"Ref\":\"ApiDomainNameEB571102\"}": {
+                "id": "Output{\"Ref\":\"ApiDomainNameEB571102\"}",
+                "path": "NxPluginTestMainApiDomain/Exports/Output{\"Ref\":\"ApiDomainNameEB571102\"}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.122.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.3.0"
+            }
+          },
+          "BootstrapVersion": {
+            "id": "BootstrapVersion",
+            "path": "NxPluginTestMainApiDomain/BootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.122.0"
+            }
+          },
+          "CheckBootstrapVersion": {
+            "id": "CheckBootstrapVersion",
+            "path": "NxPluginTestMainApiDomain/CheckBootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnRule",
+              "version": "2.122.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "aws-cdk-lib.Stack",
+          "version": "2.122.0"
+        }
+      },
+      "NxPluginTestMainTest1Stateful": {
+        "id": "NxPluginTestMainTest1Stateful",
+        "path": "NxPluginTestMainTest1Stateful",
+        "children": {
+          "SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "path": "NxPluginTestMainTest1Stateful/SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.122.0"
+            }
+          },
+          "SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "path": "NxPluginTestMainTest1Stateful/SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.122.0"
+            }
+          },
+          "SsmParameterValue:--nx-plugin-test-main--removal-policy:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--removal-policy:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "path": "NxPluginTestMainTest1Stateful/SsmParameterValue:--nx-plugin-test-main--removal-policy:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.122.0"
+            }
+          },
+          "SsmParameterValue:--nx-plugin-test-main--removal-policy:C96584B6-F00A-464E-AD19-53AFF4B05118": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--removal-policy:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "path": "NxPluginTestMainTest1Stateful/SsmParameterValue:--nx-plugin-test-main--removal-policy:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.122.0"
+            }
+          },
+          "Dynamodb": {
+            "id": "Dynamodb",
+            "path": "NxPluginTestMainTest1Stateful/Dynamodb",
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.3.0"
+            }
+          },
+          "S3": {
+            "id": "S3",
+            "path": "NxPluginTestMainTest1Stateful/S3",
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.3.0"
+            }
+          },
+          "SecretsManager": {
+            "id": "SecretsManager",
+            "path": "NxPluginTestMainTest1Stateful/SecretsManager",
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.3.0"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "NxPluginTestMainTest1Stateful/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "NxPluginTestMainTest1Stateful/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.122.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.3.0"
+            }
+          },
+          "BootstrapVersion": {
+            "id": "BootstrapVersion",
+            "path": "NxPluginTestMainTest1Stateful/BootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.122.0"
+            }
+          },
+          "CheckBootstrapVersion": {
+            "id": "CheckBootstrapVersion",
+            "path": "NxPluginTestMainTest1Stateful/CheckBootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnRule",
+              "version": "2.122.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "aws-cdk-lib.Stack",
+          "version": "2.122.0"
+        }
+      },
+      "NxPluginTestMainTest1": {
+        "id": "NxPluginTestMainTest1",
+        "path": "NxPluginTestMainTest1",
+        "children": {
+          "SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "path": "NxPluginTestMainTest1/SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.122.0"
+            }
+          },
+          "SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "path": "NxPluginTestMainTest1/SsmParameterValue:--nx-plugin-test-main--environment-type:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.122.0"
+            }
+          },
+          "ApiGateway": {
+            "id": "ApiGateway",
+            "path": "NxPluginTestMainTest1/ApiGateway",
+            "children": {
+              "nx-plugin-test-main_RestApi_test1ApiGatewayAccessLogs": {
+                "id": "nx-plugin-test-main_RestApi_test1ApiGatewayAccessLogs",
+                "path": "NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1ApiGatewayAccessLogs",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1ApiGatewayAccessLogs/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Logs::LogGroup",
+                      "aws:cdk:cloudformation:props": {
+                        "retentionInDays": 731,
+                        "tags": [
+                          {
+                            "key": "itw:stack:stateful",
+                            "value": "false"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_logs.CfnLogGroup",
+                      "version": "2.122.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_logs.LogGroup",
+                  "version": "2.122.0"
+                }
+              },
+              "nx-plugin-test-main_RestApi_test1": {
+                "id": "nx-plugin-test-main_RestApi_test1",
+                "path": "NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ApiGateway::RestApi",
+                      "aws:cdk:cloudformation:props": {
+                        "description": "/test1",
+                        "disableExecuteApiEndpoint": true,
+                        "endpointConfiguration": {
+                          "types": [
+                            "REGIONAL"
+                          ]
+                        },
+                        "name": "nx-plugin-test-main_RestApi_test1",
+                        "tags": [
+                          {
+                            "key": "itw:stack:stateful",
+                            "value": "false"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_apigateway.CfnRestApi",
+                      "version": "2.122.0"
+                    }
+                  },
+                  "Deployment": {
+                    "id": "Deployment",
+                    "path": "NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/Deployment",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/Deployment/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::ApiGateway::Deployment",
+                          "aws:cdk:cloudformation:props": {
+                            "description": "/test1",
+                            "restApiId": {
+                              "Ref": "ApiGatewaynxplugintestmainRestApitest15952EF37"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_apigateway.CfnDeployment",
+                          "version": "2.122.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_apigateway.Deployment",
+                      "version": "2.122.0"
+                    }
+                  },
+                  "DeploymentStage.prod": {
+                    "id": "DeploymentStage.prod",
+                    "path": "NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/DeploymentStage.prod",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/DeploymentStage.prod/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::ApiGateway::Stage",
+                          "aws:cdk:cloudformation:props": {
+                            "accessLogSetting": {
+                              "destinationArn": {
+                                "Fn::GetAtt": [
+                                  "ApiGatewaynxplugintestmainRestApitest1ApiGatewayAccessLogs1DDE4FCB",
+                                  "Arn"
+                                ]
+                              },
+                              "format": "{\"requestId\":\"$context.requestId\",\"ip\":\"$context.identity.sourceIp\",\"user\":\"$context.identity.user\",\"caller\":\"$context.identity.caller\",\"requestTime\":\"$context.requestTime\",\"httpMethod\":\"$context.httpMethod\",\"resourcePath\":\"$context.resourcePath\",\"status\":\"$context.status\",\"protocol\":\"$context.protocol\",\"responseLength\":\"$context.responseLength\"}"
+                            },
+                            "deploymentId": {
+                              "Ref": "ApiGatewaynxplugintestmainRestApitest1DeploymentD06C7FFD05aae6cabd5c7eb979c0b39649be9bef"
+                            },
+                            "methodSettings": [
+                              {
+                                "httpMethod": "*",
+                                "resourcePath": "/*",
+                                "dataTraceEnabled": true,
+                                "loggingLevel": "INFO",
+                                "metricsEnabled": false
+                              }
+                            ],
+                            "restApiId": {
+                              "Ref": "ApiGatewaynxplugintestmainRestApitest15952EF37"
+                            },
+                            "stageName": "prod",
+                            "tags": [
+                              {
+                                "key": "itw:stack:stateful",
+                                "value": "false"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_apigateway.CfnStage",
+                          "version": "2.122.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_apigateway.Stage",
+                      "version": "2.122.0"
+                    }
+                  },
+                  "Endpoint": {
+                    "id": "Endpoint",
+                    "path": "NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/Endpoint",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnOutput",
+                      "version": "2.122.0"
+                    }
+                  },
+                  "Default": {
+                    "id": "Default",
+                    "path": "NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/Default",
+                    "children": {
+                      "OPTIONS": {
+                        "id": "OPTIONS",
+                        "path": "NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/Default/OPTIONS",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/Default/OPTIONS/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
+                              "aws:cdk:cloudformation:props": {
+                                "apiKeyRequired": false,
+                                "authorizationType": "NONE",
+                                "httpMethod": "OPTIONS",
+                                "integration": {
+                                  "type": "MOCK",
+                                  "requestTemplates": {
+                                    "application/json": "{ statusCode: 200 }"
+                                  },
+                                  "integrationResponses": [
+                                    {
+                                      "statusCode": "204",
+                                      "responseParameters": {
+                                        "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+                                        "method.response.header.Access-Control-Allow-Origin": "'*'",
+                                        "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'",
+                                        "method.response.header.Access-Control-Allow-Credentials": "'true'"
+                                      }
+                                    }
+                                  ]
+                                },
+                                "methodResponses": [
+                                  {
+                                    "statusCode": "204",
+                                    "responseParameters": {
+                                      "method.response.header.Access-Control-Allow-Headers": true,
+                                      "method.response.header.Access-Control-Allow-Origin": true,
+                                      "method.response.header.Access-Control-Allow-Methods": true,
+                                      "method.response.header.Access-Control-Allow-Credentials": true
+                                    }
+                                  }
+                                ],
+                                "resourceId": {
+                                  "Fn::GetAtt": [
+                                    "ApiGatewaynxplugintestmainRestApitest15952EF37",
+                                    "RootResourceId"
+                                  ]
+                                },
+                                "restApiId": {
+                                  "Ref": "ApiGatewaynxplugintestmainRestApitest15952EF37"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_apigateway.CfnMethod",
+                              "version": "2.122.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_apigateway.Method",
+                          "version": "2.122.0"
+                        }
+                      },
+                      "healthz": {
+                        "id": "healthz",
+                        "path": "NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/Default/healthz",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/Default/healthz/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::ApiGateway::Resource",
+                              "aws:cdk:cloudformation:props": {
+                                "parentId": {
+                                  "Fn::GetAtt": [
+                                    "ApiGatewaynxplugintestmainRestApitest15952EF37",
+                                    "RootResourceId"
+                                  ]
+                                },
+                                "pathPart": "healthz",
+                                "restApiId": {
+                                  "Ref": "ApiGatewaynxplugintestmainRestApitest15952EF37"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_apigateway.CfnResource",
+                              "version": "2.122.0"
+                            }
+                          },
+                          "OPTIONS": {
+                            "id": "OPTIONS",
+                            "path": "NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/Default/healthz/OPTIONS",
+                            "children": {
+                              "Resource": {
+                                "id": "Resource",
+                                "path": "NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/Default/healthz/OPTIONS/Resource",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
+                                  "aws:cdk:cloudformation:props": {
+                                    "apiKeyRequired": false,
+                                    "authorizationType": "NONE",
+                                    "httpMethod": "OPTIONS",
+                                    "integration": {
+                                      "type": "MOCK",
+                                      "requestTemplates": {
+                                        "application/json": "{ statusCode: 200 }"
+                                      },
+                                      "integrationResponses": [
+                                        {
+                                          "statusCode": "204",
+                                          "responseParameters": {
+                                            "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+                                            "method.response.header.Access-Control-Allow-Origin": "'*'",
+                                            "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'",
+                                            "method.response.header.Access-Control-Allow-Credentials": "'true'"
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    "methodResponses": [
+                                      {
+                                        "statusCode": "204",
+                                        "responseParameters": {
+                                          "method.response.header.Access-Control-Allow-Headers": true,
+                                          "method.response.header.Access-Control-Allow-Origin": true,
+                                          "method.response.header.Access-Control-Allow-Methods": true,
+                                          "method.response.header.Access-Control-Allow-Credentials": true
+                                        }
+                                      }
+                                    ],
+                                    "resourceId": {
+                                      "Ref": "ApiGatewaynxplugintestmainRestApitest1healthzB7A63D9B"
+                                    },
+                                    "restApiId": {
+                                      "Ref": "ApiGatewaynxplugintestmainRestApitest15952EF37"
+                                    }
+                                  }
+                                },
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_apigateway.CfnMethod",
+                                  "version": "2.122.0"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_apigateway.Method",
+                              "version": "2.122.0"
+                            }
+                          },
+                          "get": {
+                            "id": "get",
+                            "path": "NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/Default/healthz/get",
+                            "children": {
+                              "ApiPermission.NxPluginTestMainTest1ApiGatewaynxplugintestmainRestApitest14858B7FB.GET..healthz": {
+                                "id": "ApiPermission.NxPluginTestMainTest1ApiGatewaynxplugintestmainRestApitest14858B7FB.GET..healthz",
+                                "path": "NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/Default/healthz/get/ApiPermission.NxPluginTestMainTest1ApiGatewaynxplugintestmainRestApitest14858B7FB.GET..healthz",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                                  "aws:cdk:cloudformation:props": {
+                                    "action": "lambda:InvokeFunction",
+                                    "functionName": {
+                                      "Fn::GetAtt": [
+                                        "LambdaGETtest1healthz259F8738",
+                                        "Arn"
+                                      ]
+                                    },
+                                    "principal": "apigateway.amazonaws.com",
+                                    "sourceArn": {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:aws:execute-api:eu-west-1:284588248117:",
+                                          {
+                                            "Ref": "ApiGatewaynxplugintestmainRestApitest15952EF37"
+                                          },
+                                          "/",
+                                          {
+                                            "Ref": "ApiGatewaynxplugintestmainRestApitest1DeploymentStageprodB39CBFA0"
+                                          },
+                                          "/GET/healthz"
+                                        ]
+                                      ]
+                                    }
+                                  }
+                                },
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_lambda.CfnPermission",
+                                  "version": "2.122.0"
+                                }
+                              },
+                              "ApiPermission.Test.NxPluginTestMainTest1ApiGatewaynxplugintestmainRestApitest14858B7FB.GET..healthz": {
+                                "id": "ApiPermission.Test.NxPluginTestMainTest1ApiGatewaynxplugintestmainRestApitest14858B7FB.GET..healthz",
+                                "path": "NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/Default/healthz/get/ApiPermission.Test.NxPluginTestMainTest1ApiGatewaynxplugintestmainRestApitest14858B7FB.GET..healthz",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                                  "aws:cdk:cloudformation:props": {
+                                    "action": "lambda:InvokeFunction",
+                                    "functionName": {
+                                      "Fn::GetAtt": [
+                                        "LambdaGETtest1healthz259F8738",
+                                        "Arn"
+                                      ]
+                                    },
+                                    "principal": "apigateway.amazonaws.com",
+                                    "sourceArn": {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:aws:execute-api:eu-west-1:284588248117:",
+                                          {
+                                            "Ref": "ApiGatewaynxplugintestmainRestApitest15952EF37"
+                                          },
+                                          "/test-invoke-stage/GET/healthz"
+                                        ]
+                                      ]
+                                    }
+                                  }
+                                },
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_lambda.CfnPermission",
+                                  "version": "2.122.0"
+                                }
+                              },
+                              "Resource": {
+                                "id": "Resource",
+                                "path": "NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1/Default/healthz/get/Resource",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
+                                  "aws:cdk:cloudformation:props": {
+                                    "authorizationType": "NONE",
+                                    "httpMethod": "GET",
+                                    "integration": {
+                                      "type": "AWS_PROXY",
+                                      "uri": {
+                                        "Fn::Join": [
+                                          "",
+                                          [
+                                            "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/",
+                                            {
+                                              "Fn::GetAtt": [
+                                                "LambdaGETtest1healthz259F8738",
+                                                "Arn"
+                                              ]
+                                            },
+                                            "/invocations"
+                                          ]
+                                        ]
+                                      },
+                                      "integrationHttpMethod": "POST"
+                                    },
+                                    "resourceId": {
+                                      "Ref": "ApiGatewaynxplugintestmainRestApitest1healthzB7A63D9B"
+                                    },
+                                    "restApiId": {
+                                      "Ref": "ApiGatewaynxplugintestmainRestApitest15952EF37"
+                                    }
+                                  }
+                                },
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_apigateway.CfnMethod",
+                                  "version": "2.122.0"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_apigateway.Method",
+                              "version": "2.122.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_apigateway.Resource",
+                          "version": "2.122.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_apigateway.ResourceBase",
+                      "version": "2.122.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_apigateway.RestApi",
+                  "version": "2.122.0"
+                }
+              },
+              "nx-plugin-test-main_RestApi_test1ApiBasePathMapping": {
+                "id": "nx-plugin-test-main_RestApi_test1ApiBasePathMapping",
+                "path": "NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1ApiBasePathMapping",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "NxPluginTestMainTest1/ApiGateway/nx-plugin-test-main_RestApi_test1ApiBasePathMapping/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ApiGateway::BasePathMapping",
+                      "aws:cdk:cloudformation:props": {
+                        "basePath": "test1",
+                        "domainName": {
+                          "Fn::ImportValue": "NxPluginTestMainApiDomain:ExportsOutputRefApiDomainNameEB571102DA4FDB49"
+                        },
+                        "restApiId": {
+                          "Ref": "ApiGatewaynxplugintestmainRestApitest15952EF37"
+                        },
+                        "stage": {
+                          "Ref": "ApiGatewaynxplugintestmainRestApitest1DeploymentStageprodB39CBFA0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_apigateway.CfnBasePathMapping",
+                      "version": "2.122.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_apigateway.BasePathMapping",
+                  "version": "2.122.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.3.0"
+            }
+          },
+          "SsmParameterValue:--nx-plugin-test-main--log-level:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--log-level:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "path": "NxPluginTestMainTest1/SsmParameterValue:--nx-plugin-test-main--log-level:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.122.0"
+            }
+          },
+          "SsmParameterValue:--nx-plugin-test-main--log-level:C96584B6-F00A-464E-AD19-53AFF4B05118": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--log-level:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "path": "NxPluginTestMainTest1/SsmParameterValue:--nx-plugin-test-main--log-level:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.122.0"
+            }
+          },
+          "SsmParameterValue:--nx-plugin-test-main--domain-name:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--domain-name:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "path": "NxPluginTestMainTest1/SsmParameterValue:--nx-plugin-test-main--domain-name:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.122.0"
+            }
+          },
+          "SsmParameterValue:--nx-plugin-test-main--domain-name:C96584B6-F00A-464E-AD19-53AFF4B05118": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--domain-name:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "path": "NxPluginTestMainTest1/SsmParameterValue:--nx-plugin-test-main--domain-name:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.122.0"
+            }
+          },
+          "SsmParameterValue:--nx-plugin-test-main--log-retention-days:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--log-retention-days:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "path": "NxPluginTestMainTest1/SsmParameterValue:--nx-plugin-test-main--log-retention-days:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.122.0"
+            }
+          },
+          "SsmParameterValue:--nx-plugin-test-main--log-retention-days:C96584B6-F00A-464E-AD19-53AFF4B05118": {
+            "id": "SsmParameterValue:--nx-plugin-test-main--log-retention-days:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "path": "NxPluginTestMainTest1/SsmParameterValue:--nx-plugin-test-main--log-retention-days:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.122.0"
+            }
+          },
+          "Lambda": {
+            "id": "Lambda",
+            "path": "NxPluginTestMainTest1/Lambda",
+            "children": {
+              "LambdaRole": {
+                "id": "LambdaRole",
+                "path": "NxPluginTestMainTest1/Lambda/LambdaRole",
+                "children": {
+                  "ImportLambdaRole": {
+                    "id": "ImportLambdaRole",
+                    "path": "NxPluginTestMainTest1/Lambda/LambdaRole/ImportLambdaRole",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.122.0"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "NxPluginTestMainTest1/Lambda/LambdaRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                        ],
+                        "maxSessionDuration": 3600,
+                        "tags": [
+                          {
+                            "key": "itw:stack:stateful",
+                            "value": "false"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                      "version": "2.122.0"
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "NxPluginTestMainTest1/Lambda/LambdaRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "NxPluginTestMainTest1/Lambda/LambdaRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "xray:PutTelemetryRecords",
+                                    "xray:PutTraceSegments"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": "*"
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "LambdaLambdaRoleDefaultPolicy18AF8ABC",
+                            "roles": [
+                              {
+                                "Ref": "LambdaLambdaRole717D34FC"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                          "version": "2.122.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Policy",
+                      "version": "2.122.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.Role",
+                  "version": "2.122.0"
+                }
+              },
+              "AWSLambdaBasicExecutionRole": {
+                "id": "AWSLambdaBasicExecutionRole",
+                "path": "NxPluginTestMainTest1/Lambda/AWSLambdaBasicExecutionRole",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.122.0"
+                }
+              },
+              "events--ping-pongLogGroup": {
+                "id": "events--ping-pongLogGroup",
+                "path": "NxPluginTestMainTest1/Lambda/events--ping-pongLogGroup",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "NxPluginTestMainTest1/Lambda/events--ping-pongLogGroup/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Logs::LogGroup",
+                      "aws:cdk:cloudformation:props": {
+                        "tags": [
+                          {
+                            "key": "itw:stack:stateful",
+                            "value": "false"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_logs.CfnLogGroup",
+                      "version": "2.122.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_logs.LogGroup",
+                  "version": "2.122.0"
+                }
+              },
+              "events--ping-pong": {
+                "id": "events--ping-pong",
+                "path": "NxPluginTestMainTest1/Lambda/events--ping-pong",
+                "children": {
+                  "Code": {
+                    "id": "Code",
+                    "path": "NxPluginTestMainTest1/Lambda/events--ping-pong/Code",
+                    "children": {
+                      "Stage": {
+                        "id": "Stage",
+                        "path": "NxPluginTestMainTest1/Lambda/events--ping-pong/Code/Stage",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.AssetStaging",
+                          "version": "2.122.0"
+                        }
+                      },
+                      "AssetBucket": {
+                        "id": "AssetBucket",
+                        "path": "NxPluginTestMainTest1/Lambda/events--ping-pong/Code/AssetBucket",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                          "version": "2.122.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                      "version": "2.122.0"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "NxPluginTestMainTest1/Lambda/events--ping-pong/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                      "aws:cdk:cloudformation:props": {
+                        "code": {
+                          "s3Bucket": "cdk-hnb659fds-assets-284588248117-eu-west-1",
+                          "s3Key": "803d7e662b3bbe01c4a5399d99f8af4a1f141bf8d4a9ba6ed018b74838841920.zip"
+                        },
+                        "description": "events/ping-pong",
+                        "environment": {
+                          "variables": {
+                            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
+                            "NODE_ENV": {
+                              "Ref": "SsmParameterValuenxplugintestmainenvironmenttypeC96584B6F00A464EAD1953AFF4B05118Parameter"
+                            },
+                            "NODE_OPTIONS": "--enable-source-maps",
+                            "LOG_LEVEL": {
+                              "Ref": "SsmParameterValuenxplugintestmainloglevelC96584B6F00A464EAD1953AFF4B05118Parameter"
+                            },
+                            "DOMAIN_NAME": {
+                              "Ref": "SsmParameterValuenxplugintestmaindomainnameC96584B6F00A464EAD1953AFF4B05118Parameter"
+                            },
+                            "MAIN_EVENT_BUS_NAME": {
+                              "Fn::ImportValue": "NxPluginTestMainCore:ExportsOutputRefMainEventBus78A0DEF9EB5CAD12"
+                            },
+                            "POWERTOOLS_METRICS_NAMESPACE": "94]}.${Token[TOKEN",
+                            "POWERTOOLS_TRACE_ENABLED": "true",
+                            "POWERTOOLS_TRACER_CAPTURE_RESPONSE": "true",
+                            "POWERTOOLS_TRACER_CAPTURE_ERROR": "true",
+                            "POWERTOOLS_TRACER_CAPTURE_HTTPS_REQUESTS": "true",
+                            "POWERTOOLS_LOGGER_LOG_EVENT": "false",
+                            "POWERTOOLS_LOGGER_SAMPLE_RATE": "0",
+                            "POWERTOOLS_DEV": "false",
+                            "POWERTOOLS_PARAMETERS_MAX_AGE": "5",
+                            "POWERTOOLS_PARAMETERS_SSM_DECRYPT": "false",
+                            "ITW_VERSION": "0.0.20"
+                          }
+                        },
+                        "handler": "index.handler",
+                        "loggingConfig": {
+                          "logGroup": {
+                            "Ref": "LambdaeventspingpongLogGroup61578A43"
+                          }
+                        },
+                        "memorySize": 512,
+                        "role": {
+                          "Fn::GetAtt": [
+                            "LambdaLambdaRole717D34FC",
+                            "Arn"
+                          ]
+                        },
+                        "runtime": "nodejs18.x",
+                        "tags": [
+                          {
+                            "key": "itw:event:type",
+                            "value": "event-pattern"
+                          },
+                          {
+                            "key": "itw:lambda:from",
+                            "value": "events"
+                          },
+                          {
+                            "key": "itw:sqs:throttling",
+                            "value": "false"
+                          },
+                          {
+                            "key": "itw:stack:stateful",
+                            "value": "false"
+                          }
+                        ],
+                        "timeout": 30,
+                        "tracingConfig": {
+                          "mode": "Active"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                      "version": "2.122.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda_nodejs.NodejsFunction",
+                  "version": "2.122.0"
+                }
+              },
+              "GET--test1--healthzLogGroup": {
+                "id": "GET--test1--healthzLogGroup",
+                "path": "NxPluginTestMainTest1/Lambda/GET--test1--healthzLogGroup",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "NxPluginTestMainTest1/Lambda/GET--test1--healthzLogGroup/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Logs::LogGroup",
+                      "aws:cdk:cloudformation:props": {
+                        "tags": [
+                          {
+                            "key": "itw:stack:stateful",
+                            "value": "false"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_logs.CfnLogGroup",
+                      "version": "2.122.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_logs.LogGroup",
+                  "version": "2.122.0"
+                }
+              },
+              "GET--test1--healthz": {
+                "id": "GET--test1--healthz",
+                "path": "NxPluginTestMainTest1/Lambda/GET--test1--healthz",
+                "children": {
+                  "Code": {
+                    "id": "Code",
+                    "path": "NxPluginTestMainTest1/Lambda/GET--test1--healthz/Code",
+                    "children": {
+                      "Stage": {
+                        "id": "Stage",
+                        "path": "NxPluginTestMainTest1/Lambda/GET--test1--healthz/Code/Stage",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.AssetStaging",
+                          "version": "2.122.0"
+                        }
+                      },
+                      "AssetBucket": {
+                        "id": "AssetBucket",
+                        "path": "NxPluginTestMainTest1/Lambda/GET--test1--healthz/Code/AssetBucket",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                          "version": "2.122.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                      "version": "2.122.0"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "NxPluginTestMainTest1/Lambda/GET--test1--healthz/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                      "aws:cdk:cloudformation:props": {
+                        "code": {
+                          "s3Bucket": "cdk-hnb659fds-assets-284588248117-eu-west-1",
+                          "s3Key": "03ef26fc264d93423a38d90ea1dbcf357098555a1ef1b172ece4039c42e677a3.zip"
+                        },
+                        "description": "GET /test1/healthz",
+                        "environment": {
+                          "variables": {
+                            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
+                            "NODE_ENV": {
+                              "Ref": "SsmParameterValuenxplugintestmainenvironmenttypeC96584B6F00A464EAD1953AFF4B05118Parameter"
+                            },
+                            "NODE_OPTIONS": "--enable-source-maps",
+                            "LOG_LEVEL": {
+                              "Ref": "SsmParameterValuenxplugintestmainloglevelC96584B6F00A464EAD1953AFF4B05118Parameter"
+                            },
+                            "DOMAIN_NAME": {
+                              "Ref": "SsmParameterValuenxplugintestmaindomainnameC96584B6F00A464EAD1953AFF4B05118Parameter"
+                            },
+                            "MAIN_EVENT_BUS_NAME": {
+                              "Fn::ImportValue": "NxPluginTestMainCore:ExportsOutputRefMainEventBus78A0DEF9EB5CAD12"
+                            },
+                            "POWERTOOLS_METRICS_NAMESPACE": "94]}.${Token[TOKEN",
+                            "POWERTOOLS_TRACE_ENABLED": "true",
+                            "POWERTOOLS_TRACER_CAPTURE_RESPONSE": "true",
+                            "POWERTOOLS_TRACER_CAPTURE_ERROR": "true",
+                            "POWERTOOLS_TRACER_CAPTURE_HTTPS_REQUESTS": "true",
+                            "POWERTOOLS_LOGGER_LOG_EVENT": "false",
+                            "POWERTOOLS_LOGGER_SAMPLE_RATE": "0",
+                            "POWERTOOLS_DEV": "false",
+                            "POWERTOOLS_PARAMETERS_MAX_AGE": "5",
+                            "POWERTOOLS_PARAMETERS_SSM_DECRYPT": "false",
+                            "ITW_VERSION": "0.0.20"
+                          }
+                        },
+                        "handler": "index.handler",
+                        "loggingConfig": {
+                          "logGroup": {
+                            "Ref": "LambdaGETtest1healthzLogGroupC054A80F"
+                          }
+                        },
+                        "memorySize": 512,
+                        "role": {
+                          "Fn::GetAtt": [
+                            "LambdaLambdaRole717D34FC",
+                            "Arn"
+                          ]
+                        },
+                        "runtime": "nodejs18.x",
+                        "tags": [
+                          {
+                            "key": "itw:lambda:from",
+                            "value": "apis"
+                          },
+                          {
+                            "key": "itw:stack:stateful",
+                            "value": "false"
+                          }
+                        ],
+                        "timeout": 30,
+                        "tracingConfig": {
+                          "mode": "Active"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                      "version": "2.122.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda_nodejs.NodejsFunction",
+                  "version": "2.122.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.3.0"
+            }
+          },
+          "SQS": {
+            "id": "SQS",
+            "path": "NxPluginTestMainTest1/SQS",
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.3.0"
+            }
+          },
+          "Event": {
+            "id": "Event",
+            "path": "NxPluginTestMainTest1/Event",
+            "children": {
+              "events--ping-pong": {
+                "id": "events--ping-pong",
+                "path": "NxPluginTestMainTest1/Event/events--ping-pong",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "NxPluginTestMainTest1/Event/events--ping-pong/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Events::Rule",
+                      "aws:cdk:cloudformation:props": {
+                        "eventBusName": {
+                          "Fn::ImportValue": "NxPluginTestMainCore:ExportsOutputRefMainEventBus78A0DEF9EB5CAD12"
+                        },
+                        "eventPattern": {
+                          "detail-type": [
+                            {
+                              "suffix": ".Ping"
+                            }
+                          ],
+                          "source": [
+                            "94]}.${Token[TOKEN"
+                          ]
+                        },
+                        "state": "ENABLED",
+                        "targets": [
+                          {
+                            "id": "Target0",
+                            "arn": {
+                              "Fn::GetAtt": [
+                                "Lambdaeventspingpong23FA50AF",
+                                "Arn"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_events.CfnRule",
+                      "version": "2.122.0"
+                    }
+                  },
+                  "AllowEventRuleNxPluginTestMainTest1LambdaeventspingpongC557782A": {
+                    "id": "AllowEventRuleNxPluginTestMainTest1LambdaeventspingpongC557782A",
+                    "path": "NxPluginTestMainTest1/Event/events--ping-pong/AllowEventRuleNxPluginTestMainTest1LambdaeventspingpongC557782A",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                      "aws:cdk:cloudformation:props": {
+                        "action": "lambda:InvokeFunction",
+                        "functionName": {
+                          "Fn::GetAtt": [
+                            "Lambdaeventspingpong23FA50AF",
+                            "Arn"
+                          ]
+                        },
+                        "principal": "events.amazonaws.com",
+                        "sourceArn": {
+                          "Fn::GetAtt": [
+                            "Eventeventspingpong70ABCAF5",
+                            "Arn"
+                          ]
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.CfnPermission",
+                      "version": "2.122.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_events.Rule",
+                  "version": "2.122.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.3.0"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "NxPluginTestMainTest1/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "NxPluginTestMainTest1/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.122.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.3.0"
+            }
+          },
+          "BootstrapVersion": {
+            "id": "BootstrapVersion",
+            "path": "NxPluginTestMainTest1/BootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.122.0"
+            }
+          },
+          "CheckBootstrapVersion": {
+            "id": "CheckBootstrapVersion",
+            "path": "NxPluginTestMainTest1/CheckBootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnRule",
+              "version": "2.122.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "aws-cdk-lib.Stack",
+          "version": "2.122.0"
+        }
+      },
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree",
+        "constructInfo": {
+          "fqn": "constructs.Construct",
+          "version": "10.3.0"
+        }
+      }
+    },
+    "constructInfo": {
+      "fqn": "aws-cdk-lib.App",
+      "version": "2.122.0"
+    }
+  }
+}
